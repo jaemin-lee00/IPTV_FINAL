@@ -4,6 +4,8 @@ import mysql.connector
 
 categories = []
 
+Hz_Settings = ["Hz_100", "Hz_300", "Hz_1k", "Hz_3k", "Hz_10k"]
+
 def load_categories():
     global categories
     conn = mysql.connector.connect(
@@ -70,24 +72,25 @@ def open_equalizer(parent_frame, category):
     """, (category,))
     settings = cursor.fetchall()
 
-    print(settings)
     # Create 5 vertical lines (rectangles) for equalizer settings
     for i, setting_value in enumerate(settings[0]):
+        int_setting_value = int(setting_value)
+
         line_frame = tk.Frame(eq_frame)
         line_frame.place(relx=0.1 + i * 0.15, rely=0.1, relwidth=0.15, relheight=0.8)
 
         # Add a label for the setting name
-        setting_label = tk.Label(line_frame, text=f"설정 {i+1}", width=10)
+        setting_label = tk.Label(line_frame, text= Hz_Settings[i], width=10)
         setting_label.pack(pady=5)
 
         # Add a scale (slider) for the setting value
         setting_scale = tk.Scale(line_frame, from_=100, to=0, orient='vertical')
-        setting_scale.set(setting_value)
+        setting_scale.set(int_setting_value)
         setting_scale.pack(fill='y', expand=True)
 
         # Add an entry to display the current value
         setting_value_entry = tk.Entry(line_frame, width=5)
-        setting_value_entry.insert(0, setting_value)
+        setting_value_entry.insert(0, int_setting_value)
         setting_value_entry.pack(pady=5)
 
         # Update the entry value when the scale is moved
