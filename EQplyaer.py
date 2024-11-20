@@ -67,20 +67,23 @@ class EQPlayer:
         if self.is_playing:
             self.stop_audio()
         
-        try:
-            with sf.SoundFile(file_path) as f:
-                self.audio_data = f.read(dtype="float32")
-                if self.audio_data.ndim > 1:
-                    self.audio_data = np.mean(self.audio_data, axis=1, dtype=np.float32)
-                self.samplerate = f.samplerate
-                self.total_duration = len(self.audio_data) / self.samplerate
-        except Exception as e:
-            print(f"Error loading audio file: {e}")
-            return
+        # 파일이 바뀌었을 때만 새로 로드
+        if not hasattr(self, 'current_file') or self.current_file != file_path:
+            try:
+                with sf.SoundFile(file_path) as f:
+                    self.audio_data = f.read(dtype="float32")
+                    if self.audio_data.ndim > 1:
+                        self.audio_data = np.mean(self.audio_data, axis=1, dtype=np.float32)
+                    self.samplerate = f.samplerate
+                    self.total_duration = len(self.audio_data) / self.samplerate
+                self.current_file = file_path
+                self.current_position = 0  # 새 파일일 경우 위치 초기화
+            except Exception as e:
+                print(f"Error loading audio file: {e}")
+                return
 
         self.is_playing = True
-        self.current_position = 0
-        self.playback_start_time = time.time()
+        self.playback_start_time = time.time() - (self.current_position / self.samplerate)
         threading.Thread(target=self.play_audio_from_position, daemon=True).start()
         self.root.after(100, self.update_playback_bar)
 
@@ -99,7 +102,8 @@ class EQPlayer:
             )
             self.audio_stream.start()
 
-            for i in range(0, len(self.audio_data), self.buffer_size):
+            # 저장된 위치부터 재생 시작
+            for i in range(self.current_position, len(self.audio_data), self.buffer_size):
                 if not self.is_playing:
                     break
                 
@@ -111,6 +115,7 @@ class EQPlayer:
                     time.sleep(0.001)
                 
                 self.audio_queue.put(chunk)
+                self.current_position = i  # 현재 위치 업데이트
 
         except Exception as e:
             print(f"Error in audio playback: {e}")
@@ -143,7 +148,10 @@ class EQPlayer:
         if self.is_playing:
             self.is_playing = False
             elapsed = time.time() - self.playback_start_time
-            self.current_position = int(elapsed * self.samplerate)
+            self.current_position = min(
+                int(elapsed * self.samplerate),
+                len(self.audio_data) if self.audio_data is not None else 0
+            )
             
             while not self.audio_queue.empty():
                 try:
