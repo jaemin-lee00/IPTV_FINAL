@@ -18,8 +18,13 @@ class EQPlayer:
         self.playback_start_time = 0
         self.total_duration = 0
         self.current_gains = [0, 0, 0, 0, 0]
-        self.audio_queue = queue.Queue()
+        self.audio_queue = queue.Queue(maxsize=64)  # 큐 사이즈 충분히 확보
         self.audio_stream = None
+        self.current_position = 0  # 현재 재생 위치
+        self.audio_data = None     # 전체 오디오 데이터
+        self.samplerate = None     # 샘플레이트 저장
+        self.buffer_size = 4096  # 버퍼 사이즈 증가
+        self.freqs = [100, 300, 1000, 3000, 10000]  # 주파수 대역 정의
         
         self.setup_gui()
         
@@ -40,9 +45,11 @@ class EQPlayer:
 
     def equalizer(self, data, fs, freqs, gains, Q=1.0):
         try:
-            filtered = np.zeros(len(data), dtype=np.float32)
+            data = np.array(data, dtype=np.float32)
+            filtered = np.zeros_like(data)
             for freq, gain in zip(freqs, gains):
                 filtered += self.peak_filter(data, freq, fs, gain, Q)
+            filtered = filtered / len(freqs)  # 필터 수로 나누어 평균
             return filtered
         except Exception as e:
             print(f"Error in equalizer function: {e}")
@@ -57,93 +64,97 @@ class EQPlayer:
                 self.root.after(1000, self.update_playback_bar)
 
     def load_and_play_audio(self, file_path):
-        self.stop_audio()
+        if self.is_playing:
+            self.stop_audio()
         
-        while not self.audio_queue.empty():
-            try:
-                self.audio_queue.get_nowait()
-            except queue.Empty:
-                break
-        
-        if not self.is_playing:
-            self.is_playing = True
-            threading.Thread(target=self.play_audio, args=(file_path,)).start()
-            self.root.after(1000, self.update_playback_bar)
-
-    def play_audio(self, file_path):
         try:
             with sf.SoundFile(file_path) as f:
-                audio = f.read(dtype="float32")
-                if audio.ndim > 1:
-                    audio = np.mean(audio, axis=1)
-                samplerate = f.samplerate
-                self.total_duration = len(audio) / samplerate
+                self.audio_data = f.read(dtype="float32")
+                if self.audio_data.ndim > 1:
+                    self.audio_data = np.mean(self.audio_data, axis=1, dtype=np.float32)
+                self.samplerate = f.samplerate
+                self.total_duration = len(self.audio_data) / self.samplerate
+        except Exception as e:
+            print(f"Error loading audio file: {e}")
+            return
 
-            self.playback_start_time = time.time()
-            
+        self.is_playing = True
+        self.current_position = 0
+        self.playback_start_time = time.time()
+        threading.Thread(target=self.play_audio_from_position, daemon=True).start()
+        self.root.after(100, self.update_playback_bar)
+
+    def play_audio_from_position(self):
+        try:
             if self.audio_stream is not None:
                 self.audio_stream.stop()
                 self.audio_stream.close()
             
             self.audio_stream = sd.OutputStream(
-                samplerate=samplerate,
+                samplerate=self.samplerate,
                 channels=1,
                 callback=self.audio_callback,
-                dtype='float32',
-                blocksize=1024
+                blocksize=self.buffer_size,
+                dtype=np.float32
             )
             self.audio_stream.start()
 
-            chunk_size = 1024
-            for i in range(0, len(audio), chunk_size):
+            for i in range(0, len(self.audio_data), self.buffer_size):
                 if not self.is_playing:
                     break
-                chunk = audio[i:i + chunk_size]
-                if len(chunk) < chunk_size:
-                    chunk = np.pad(chunk, (0, chunk_size - len(chunk)), 'constant')
+                
+                chunk = self.audio_data[i:i + self.buffer_size]
+                if len(chunk) < self.buffer_size:
+                    chunk = np.pad(chunk, (0, self.buffer_size - len(chunk)))
+                
+                while self.is_playing and self.audio_queue.full():
+                    time.sleep(0.001)
+                
                 self.audio_queue.put(chunk)
 
-            while not self.audio_queue.empty() and self.is_playing:
-                time.sleep(0.1)
-
         except Exception as e:
-            print(f"Error playing audio: {e}")
+            print(f"Error in audio playback: {e}")
         finally:
-            self.is_playing = False
             if self.audio_stream is not None:
                 self.audio_stream.stop()
                 self.audio_stream.close()
-                self.audio_stream = None
 
     def audio_callback(self, outdata, frames, time_info, status):
         try:
             data = self.audio_queue.get_nowait()
+            if any(gain != 0 for gain in self.current_gains):  # gain 값이 변경된 경우에만 이퀄라이저 적용
+                # 이퀄라이저 처리 적용
+                processed_data = self.equalizer(
+                    data,
+                    self.samplerate,
+                    self.freqs,
+                    self.current_gains
+                )
+                outdata[:] = processed_data.reshape(-1, 1)
+            else:
+                outdata[:] = data.reshape(-1, 1)
         except queue.Empty:
-            outdata[:] = np.zeros((frames, 1), dtype='float32')
-            return
-
-        processed_data = self.equalizer(data, 44100, [100, 300, 1000, 3000, 10000], self.current_gains)
-        
-        if len(processed_data) < frames:
-            processed_data = np.pad(processed_data, (0, frames - len(processed_data)), 'constant')
-        elif len(processed_data) > frames:
-            processed_data = processed_data[:frames]
-        
-        outdata[:] = processed_data.reshape(-1, 1)
+            outdata.fill(0)
+        except Exception as e:
+            print(f"Error in audio callback: {e}")
+            outdata.fill(0)
 
     def stop_audio(self):
-        self.is_playing = False
-        
-        while not self.audio_queue.empty():
-            try:
-                self.audio_queue.get_nowait()
-            except queue.Empty:
-                break
-        
-        if self.audio_stream is not None:
-            self.audio_stream.stop()
-            self.audio_stream.close()
-            self.audio_stream = None
+        if self.is_playing:
+            self.is_playing = False
+            elapsed = time.time() - self.playback_start_time
+            self.current_position = int(elapsed * self.samplerate)
+            
+            while not self.audio_queue.empty():
+                try:
+                    self.audio_queue.get_nowait()
+                except queue.Empty:
+                    break
+            
+            if self.audio_stream is not None:
+                self.audio_stream.stop()
+                self.audio_stream.close()
+                self.audio_stream = None
         
         sd.stop()
 
@@ -152,6 +163,7 @@ class EQPlayer:
         cursor = conn.cursor()
         cursor.execute("SELECT DISTINCT GNR_MLSFC_NM FROM watched_data")
         self.categories = [row[0] for row in cursor.fetchall()]
+        print("category is : ", self.categories)
         conn.close()
 
     def load_equalizer_settings(self, category):
@@ -159,14 +171,16 @@ class EQPlayer:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT Hz_100, Hz_300, Hz_1k, Hz_3k, Hz_10k
-            FROM watched_data
-            WHERE GNR_MLSFC_NM = %s
+            FROM equalizer_settings
+            WHERE E_ID = %s
             LIMIT 1
         """, (category,))
         settings = cursor.fetchone() or [50, 50, 50, 50, 50]
 
         for i, slider in enumerate(self.sliders):
             slider.set(settings[i])
+
+        print(settings)
 
         cursor.close()
         conn.close()
@@ -182,6 +196,7 @@ class EQPlayer:
 
     def on_slider_change(self, index, value):
         self.current_gains[index] = int(value) - 50
+        print(f"Frequency {self.freqs[index]}Hz: Gain {self.current_gains[index]}dB")
 
     def load_image(self, filename: str):
         img = Image.open(filename)
