@@ -4,6 +4,14 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import os
+import sys
+
+# 상위 디렉토리 경로를 파이썬 모듈 검색 경로에 추가
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if (parent_dir not in sys.path):
+    sys.path.append(parent_dir)
+
+from EQplayer import EQPlayer
 
 
 class DetailScreen(QMainWindow):
@@ -16,12 +24,13 @@ class DetailScreen(QMainWindow):
         self.selected_index = None  # 마지막으로 클릭한 영화 인덱스
         self.category = None  # 선택된 카테고리 변수
         self.movies = [
-            {"poster": "poster1_detail.jpg", "desc": "전설적인 밴드 퀸과 프레디 머큐리의 열정, 음악, 그리고 영혼을 담은 감동적인 이야기.", "hashtags": ["#드라마", "#프레디머큐리", "#영혼을울리는"]},
-            {"poster": "poster2_detail.jpg", "desc": "실화에서 시작된 초자연적 공포, 워렌 부부가 맞서는 소름 돋는 악령의 실체!", "hashtags": ["#공포", "#실화바탕", "#심장주의"]},
-            {"poster": "poster3_detail.jpg", "desc": "전설은 끝나지 않는다, 존 윅의 폭발적 액션과 복수가 절정을 이루는 네 번째 이야기!", "hashtags": ["#액션", "#존윅", "#킬러의귀환"]},
-            {"poster": "poster4_detail.jpg", "desc": "죽음 너머의 아름다운 세계, 음악과 가족의 소중함을 노래하는 환상적인 이야기!", "hashtags": ["#애니메이션", "#눈물버튼", "#음악과가족"]},
-            {"poster": "poster5_detail.jpg", "desc": "감정들의 새로운 모험, 우리 마음속 또 다른 세계를 탐험하다!", "hashtags": ["#애니메이션", "#감정대탐험", "#유머와감동"]},
+            {"poster": "2차/poster1_detail.jpg", "desc": "전설적인 밴드 퀸과 프레디 머큐리의 열정, 음악, 그리고 영혼을 담은 감동적인 이야기.", "hashtags": ["#드라마", "#프레디머큐리", "#영혼을울리는"]},
+            {"poster": "2차/poster2_detail.jpg", "desc": "실화에서 시작된 초자연적 공포, 워렌 부부가 맞서는 소름 돋는 악령의 실체!", "hashtags": ["#공포", "#실화바탕", "#심장주의"]},
+            {"poster": "2차/poster3_detail.jpg", "desc": "전설은 끝나지 않는다, 존 윅의 폭발적 액션과 복수가 절정을 이루는 네 번째 이야기!", "hashtags": ["#액션", "#존윅", "#킬러의귀환"]},
+            {"poster": "2차/poster4_detail.jpg", "desc": "죽음 너머의 아름다운 세계, 음악과 가족의 소중함을 노래하는 환상적인 이야기!", "hashtags": ["#애니메이션", "#눈물버튼", "#음악과가족"]},
+            {"poster": "2차/poster5_detail.jpg", "desc": "감정들의 새로운 모험, 우리 마음속 또 다른 세계를 탐험하다!", "hashtags": ["#애니메이션", "#감정대탐험", "#유머와감동"]},
         ]
+        self.flag = False
         self.initUI()
 
     def initUI(self):
@@ -86,7 +95,7 @@ class DetailScreen(QMainWindow):
             poster_label.setAlignment(Qt.AlignCenter)
 
             # 중앙 포스터와 양옆 포스터 크기 및 스타일 설정
-            if offset == 0:  # 중앙 포스터
+            if (offset == 0):  # 중앙 포스터
                 poster_label.setFixedSize(900, 550)
                 frame.setStyleSheet(
                     """
@@ -106,7 +115,7 @@ class DetailScreen(QMainWindow):
                 )
 
             # 포스터 이미지 설정
-            if os.path.exists(movie["poster"]):
+            if (os.path.exists(movie["poster"])):
                 pixmap = QPixmap(movie["poster"]).scaled(
                     poster_label.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation
                 )
@@ -142,7 +151,7 @@ class DetailScreen(QMainWindow):
 
     def on_poster_clicked(self, index):
         """포스터 클릭 동작"""
-        if index == self.current_index and self.selected_index == self.current_index:
+        if (index == self.current_index and self.selected_index == self.current_index):
             # 이미 중앙에 있는 포스터를 다시 클릭했을 때 팝업
             self.show_popup(index)
         else:
@@ -161,12 +170,26 @@ class DetailScreen(QMainWindow):
             QMessageBox.No
         )
 
-        if reply == QMessageBox.Yes:
+        if (reply == QMessageBox.Yes):
             # 첫 번째 해시태그를 카테고리로 설정
             self.category = self.movies[index]["hashtags"][0]
             self.def_set_categories()
 
     def def_set_categories(self):
         """카테고리 설정"""
-        print(f"선택된 카테고리: {self.category}")  # 콘솔 출력, 다른 모듈에서 사용할 수 있도록 전달
+        player = EQPlayer()
+        category_without_first_char = self.category[1:]  # Remove '#' from category
+        # Load category first
+        player.load_categories(category_without_first_char)
+        # This will trigger equalizer settings load with the stored category
+        #player.apply_category_settings()
+        print(f"Setting category: {category_without_first_char}")
+        player.run()
+
+    def get_selected_category(self):
+        """선택된 카테고리 반환"""
+        return self.category
+    
+    def Is_set_categories(self):
+        return self.flag
 

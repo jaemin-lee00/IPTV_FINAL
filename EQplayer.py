@@ -25,6 +25,8 @@ class EQPlayer:
         self.samplerate = None     # 샘플레이트 저장
         self.buffer_size = 4096  # 버퍼 사이즈 증가
         self.freqs = [100, 300, 1000, 3000, 10000]  # 주파수 대역 정의
+        self.last_position_update = 0  # 마지막 위치 업데이트 시간 추가
+        self.category = None  # Add category storage
         
         self.setup_gui()
         
@@ -56,12 +58,14 @@ class EQPlayer:
             return data
 
     def update_playback_bar(self):
-        if self.is_playing:
-            elapsed = time.time() - self.playback_start_time
-            percentage = min((elapsed / self.total_duration) * 100, 100)
-            self.playback_bar.set(percentage)
-            if percentage < 100:
-                self.root.after(1000, self.update_playback_bar)
+        if self.is_playing and self.audio_data is not None:
+            current_time = time.time()
+            # 실제 오디오 처리 위치 기반으로 진행률 계산
+            position_percentage = (self.current_position / len(self.audio_data)) * 100
+            self.playback_bar.set(position_percentage)
+            
+            if position_percentage < 100:
+                self.root.after(100, self.update_playback_bar)
 
     def load_and_play_audio(self, file_path):
         if self.is_playing:
@@ -77,13 +81,19 @@ class EQPlayer:
                     self.samplerate = f.samplerate
                     self.total_duration = len(self.audio_data) / self.samplerate
                 self.current_file = file_path
-                self.current_position = 0  # 새 파일일 경우 위치 초기화
+                self.current_position = 0
             except Exception as e:
                 print(f"Error loading audio file: {e}")
                 return
 
+        # 현재 위치를 정확하게 설정
         self.is_playing = True
-        self.playback_start_time = time.time() - (self.current_position / self.samplerate)
+        exact_time = self.current_position / self.samplerate
+        self.playback_start_time = time.time() - exact_time
+        
+        # 재생 위치를 버퍼 사이즈의 배수로 조정하여 정확한 시작점 보장
+        self.current_position = (self.current_position // self.buffer_size) * self.buffer_size
+        
         threading.Thread(target=self.play_audio_from_position, daemon=True).start()
         self.root.after(100, self.update_playback_bar)
 
@@ -103,19 +113,22 @@ class EQPlayer:
             self.audio_stream.start()
 
             # 저장된 위치부터 재생 시작
-            for i in range(self.current_position, len(self.audio_data), self.buffer_size):
+            # 버퍼 크기를 더 작게 조정하여 위치 업데이트 정확도 향상
+            chunk_size = self.buffer_size
+
+            for i in range(self.current_position, len(self.audio_data), chunk_size):
                 if not self.is_playing:
                     break
                 
-                chunk = self.audio_data[i:i + self.buffer_size]
-                if len(chunk) < self.buffer_size:
-                    chunk = np.pad(chunk, (0, self.buffer_size - len(chunk)))
+                chunk = self.audio_data[i:i + chunk_size]
+                if len(chunk) < chunk_size:
+                    chunk = np.pad(chunk, (0, chunk_size - len(chunk)))
                 
                 while self.is_playing and self.audio_queue.full():
-                    time.sleep(0.001)
+                    time.sleep(0.0001)  # 대기 시간 감소
                 
                 self.audio_queue.put(chunk)
-                self.current_position = i  # 현재 위치 업데이트
+                self.current_position = i  # 현재 위치 정확하게 업데이트
 
         except Exception as e:
             print(f"Error in audio playback: {e}")
@@ -146,18 +159,12 @@ class EQPlayer:
 
     def stop_audio(self):
         if self.is_playing:
-            self.is_playing = False
-            elapsed = time.time() - self.playback_start_time
-            self.current_position = min(
-                int(elapsed * self.samplerate),
-                len(self.audio_data) if self.audio_data is not None else 0
-            )
+            if self.audio_data is not None:
+                self.current_position = min(self.current_position, len(self.audio_data))
             
-            while not self.audio_queue.empty():
-                try:
-                    self.audio_queue.get_nowait()
-                except queue.Empty:
-                    break
+            # 오디오 큐 초기화
+            with self.audio_queue.mutex:
+                self.audio_queue.queue.clear()
             
             if self.audio_stream is not None:
                 self.audio_stream.stop()
@@ -166,23 +173,25 @@ class EQPlayer:
         
         sd.stop()
 
-    def load_categories(self):
-        conn = self.connect_to_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT DISTINCT GNR_MLSFC_NM FROM watched_data")
-        self.categories = [row[0] for row in cursor.fetchall()]
-        print("category is : ", self.categories)
-        conn.close()
+    def load_categories(self, category=None):
+        if category:
+            self.category = category
+            self.categories = [category]
+            print(f"Category loaded: {self.category}")
 
-    def load_equalizer_settings(self, category):
+    def load_equalizer_settings(self, category=None):
         conn = self.connect_to_db()
         cursor = conn.cursor()
+        
+        # Use either the passed category or the stored one
+        category_to_use = category or self.category
+        
         cursor.execute("""
             SELECT Hz_100, Hz_300, Hz_1k, Hz_3k, Hz_10k
             FROM equalizer_settings
             WHERE E_ID = %s
-            LIMIT 1
-        """, (category,))
+        """, (category_to_use,))
+        
         settings = cursor.fetchone() or [50, 50, 50, 50, 50]
 
         for i, slider in enumerate(self.sliders):
@@ -240,11 +249,11 @@ class EQPlayer:
         category_button.pack(side='left', padx=10)
 
         self.load_image("image/img02.jpg")
-        self.load_categories()
+        #self.load_categories()
 
     def run(self):
         self.root.mainloop()
 
-if __name__ == "__main__":
-    player = EQPlayer()
-    player.run()
+# if __name__ == "__main__":
+#     player = EQPlayer()
+#     player.run()

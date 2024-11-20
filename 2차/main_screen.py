@@ -51,10 +51,10 @@ class MainScreen(QMainWindow):
 
         # 툴바 버튼 추가
         tool_buttons = [
-            {"name": "홈", "icon": "home.png"},
-            {"name": "검색", "icon": "search.png"},
-            {"name": "설정", "icon": "setting.png"},
-            {"name": "movie", "icon": "movie.png"}
+            {"name": "홈", "icon": "2차/home.png"},
+            {"name": "검색", "icon": "2차/search.png"},
+            {"name": "설정", "icon": "2차/setting.png"},
+            {"name": "movie", "icon": "2차/movie.png"}
         ]
 
         for tool in tool_buttons:
@@ -79,7 +79,7 @@ class MainScreen(QMainWindow):
     def setup_banner(self, layout):
         """배너 설정"""
         banner_label = QLabel()
-        banner_pixmap = QPixmap("배너.png")  # 배너 이미지 경로
+        banner_pixmap = QPixmap("2차/배너.png")  # 배너 이미지 경로
         if not banner_pixmap.isNull():
             banner_pixmap = banner_pixmap.scaled(
                 self.width() - 60, 240, Qt.IgnoreAspectRatio, Qt.SmoothTransformation
@@ -102,11 +102,11 @@ class MainScreen(QMainWindow):
         poster_layout.setSpacing(5)
 
         movies = [
-            {"poster": "poster1.jpg", "id": 0},
-            {"poster": "poster2.jpg", "id": 1},
-            {"poster": "poster3.jpg", "id": 2},
-            {"poster": "poster4.jpg", "id": 3},
-            {"poster": "poster5.jpg", "id": 4},
+            {"poster": "2차/poster1.jpg", "id": 0},
+            {"poster": "2차/poster2.jpg", "id": 1},
+            {"poster": "2차/poster3.jpg", "id": 2},
+            {"poster": "2차/poster4.jpg", "id": 3},
+            {"poster": "2차/poster5.jpg", "id": 4},
         ]
 
         for movie in movies:
