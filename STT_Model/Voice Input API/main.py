@@ -6,11 +6,11 @@ from audio_recorder import record_audio
 from audio_processor import process_audio_file
 from qa_processor import KoreanQAProcessor
 
-def get_voice_answer(model, question):
+def get_voice_answer(model, question, q_type):
     print(f"\n질문: {question}")
     print("스페이스바를 눌러 답변을 시작하고, 다시 눌러서 종료하세요.")
     
-    audio_filename = record_audio()
+    audio_filename = record_audio(filename=f"{q_type.lower()}_recorded_audio.wav")
     if not audio_filename:
         logging.error("녹음이 취소되었습니다.")
         return None
@@ -45,7 +45,7 @@ def main():
     
     answers = {}
     for q_type, question, *choices in questions:
-        answer_text = get_voice_answer(model, question)
+        answer_text = get_voice_answer(model, question, q_type)
         if answer_text:
             if choices:
                 processed_answer = qa_processor.get_answer(question, answer_text, q_type, choices[0])

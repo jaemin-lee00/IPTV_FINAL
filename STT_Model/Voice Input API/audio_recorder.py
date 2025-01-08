@@ -3,9 +3,18 @@ import wave
 import keyboard
 import threading
 import time
+import os
 
 def record_audio(filename="recorded_audio.wav", trigger_key='space'):
     """키 입력으로 제어되는 음성 녹음"""
+    # Recorded_audio 디렉토리 생성
+    save_dir = "Recorded_audio"
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    
+    # 파일 경로 설정
+    filepath = os.path.join(save_dir, filename)
+    
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 16000
@@ -53,12 +62,12 @@ def record_audio(filename="recorded_audio.wav", trigger_key='space'):
     p.terminate()
 
     if frames:  # 녹음된 데이터가 있을 경우에만 파일 저장
-        wf = wave.open(filename, 'wb')
+        wf = wave.open(filepath, 'wb')
         wf.setnchannels(CHANNELS)
         wf.setsampwidth(p.get_sample_size(FORMAT))
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
         wf.close()
-        return filename
+        return filepath
     
     return None
