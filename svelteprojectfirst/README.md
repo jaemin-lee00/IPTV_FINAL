@@ -1,3 +1,12 @@
+## In Korea
+
+```
+시작 전 cd svelteprojectfirst 로 진입 로컬 시작 
+이후 npm install을 통해 패키지 다운로드
+마지막으로 npm run dev를 통해 실행
+```
+
+
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
 ---
