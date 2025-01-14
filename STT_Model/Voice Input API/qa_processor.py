@@ -32,6 +32,41 @@ class KoreanQAProcessor:
             '조금': 5600,
             '거의': 3000
         }
+        
+        # 한글 숫자 변환 사전 추가
+        self.korean_numbers = {
+            # 기본 한글 숫자
+            '영': 0, '공': 0, '빵': 0,
+            '일': 1, '하나': 1, '한': 1, '첫': 1,
+            '이': 2, '둘': 2,
+            '삼': 3, '셋': 3,
+            '사': 4, '넷': 4,
+            '오': 5, '다섯': 5,
+            '육': 6, '여섯': 6,
+            '칠': 7, '일곱': 7,
+            '팔': 8, '여덟': 8,
+            '구': 9, '아홉': 9,
+            '십': 10, '열': 10,
+            
+            # 십단위 고유어
+            '스무': 20, '스물': 20,
+            '서른': 30,
+            '마흔': 40,
+            '쉰': 50,
+            '예순': 60,
+            '일흔': 70,
+            '여든': 80,
+            '아흔': 90
+        }
+        
+        # 단위 정의
+        self.number_units = {
+            '십': 10,
+            '백': 100,
+            '천': 1000,
+            '만': 10000,
+            '억': 100000000
+        }
 
     def extract_name(self, text):
         """이름 추출"""
@@ -48,18 +83,62 @@ class KoreanQAProcessor:
         return None
 
     def extract_number(self, text):
-        """숫자 추출"""
-        # 숫자 패턴 찾기 (정수 또는 소수)
-        numbers = re.findall(r'\d+\.?\d*', text)
-        if numbers:
-            return numbers[0]
+        """숫자 추출 개선"""
+        try:
+            # 1. 아라비아 숫자 먼저 처리
+            num_pattern = re.findall(r'\d+\.?\d*', text)
+            if num_pattern:
+                return num_pattern[0]
+            
+            # 2. 복합 한글 숫자 처리
+            words = text.split()
+            for word in words:
+                total = 0
+                current = 0
+                unit = 1
+                
+                # 각 글자별로 처리
+                for char in word:
+                    if char in self.korean_numbers:
+                        current = self.korean_numbers[char]
+                    elif char in self.number_units:
+                        if current == 0:
+                            current = 1
+                        unit = self.number_units[char]
+                        total += (current * unit)
+                        current = 0
+                        unit = 1
+                    else:
+                        if current > 0:
+                            total += current
+                            current = 0
+                
+                if current > 0:
+                    total += current
+                
+                if total > 0:
+                    return str(total)
+                
+                # 단일 한글 숫자 확인
+                if word in self.korean_numbers:
+                    return str(self.korean_numbers[word])
+            
+            # 3. 형태소 분석을 통한 숫자 추출
+            morphs = self.kiwi.analyze(text)
+            for word_info in morphs[0]:
+                if len(word_info) >= 2:
+                    word, pos = word_info[0], word_info[1]
+                    if pos in ['NR', 'SN']:  # 수사나 숫자를 찾음
+                        if word in self.korean_numbers:
+                            return str(self.korean_numbers[word])
+                        try:
+                            return str(int(word))
+                        except ValueError:
+                            continue
+
+        except Exception as e:
+            logging.error(f"Error processing number: {str(e)}")
         
-        # 한글 숫자 변환
-        korean_numbers = {'일':1, '이':2, '삼':3, '사':4, '오':5, 
-                         '육':6, '칠':7, '팔':8, '구':9, '십':10}
-        for kor, num in korean_numbers.items():
-            if kor in text:
-                return str(num)
         return None
 
     def check_yes_no(self, text):

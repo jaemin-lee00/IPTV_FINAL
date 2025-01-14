@@ -6,14 +6,14 @@ def process_audio_file(model, file_path):
     """오디오 파일 처리"""
     start_time = time.time()
     try:
-        segments, info = model.transcribe(file_path, beam_size=5)
+        # language='ko' 파라미터 추가하여 한국어만 인식하도록 설정
+        segments, info = model.transcribe(file_path, beam_size=5, language='ko')
         process_time = time.time() - start_time
         
         logging.info(f"\n[{file_path}] 처리 결과:")
         logging.info(f"파일 처리 시간: {process_time:.2f}초")
-        logging.info(f"감지된 언어: {info.language} (확률: {info.language_probability:.2f})")
+        logging.info(f"언어: 한국어")
         
-        # 디버깅: segments 내용 출력
         segments = list(segments)
         
         for segment in segments:
