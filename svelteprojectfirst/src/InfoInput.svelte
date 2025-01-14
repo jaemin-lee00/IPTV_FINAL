@@ -1,5 +1,6 @@
 <script>
 	import { createEventDispatcher, onMount } from 'svelte';
+	import { processVoiceInput } from './services/voiceService';
 	
 	const dispatch = createEventDispatcher();
 
@@ -195,6 +196,86 @@
 					event.target.value = event.target.value.replace(/[^가-힣a-zA-Z\s]/g, '');
 			}
 	}
+
+	let isRecording = false;
+    let mediaRecorder;
+    let audioChunks = [];
+    let recordingStatus = '';
+    let recordingTime = 0;
+    let recordingTimer;
+
+    function updateRecordingTime() {
+        recordingTime++;
+        recordingStatus = `녹음 중... (${recordingTime}초)`;
+    }
+
+    async function startVoiceInput() {
+        if (isRecording) {
+            clearInterval(recordingTimer);
+            recordingStatus = '녹음 처리 중...';
+            mediaRecorder.stop();
+            isRecording = false;
+            return;
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            isRecording = true;
+            audioChunks = [];
+            recordingTime = 0;
+            recordingStatus = '녹음 시작...';
+            errorMessage = '';
+
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = (event) => {
+                audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = async () => {
+                try {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const currentStepInfo = steps[currentStep];
+                    
+                    if (!currentStepInfo) {
+                        throw new Error('현재 단계 정보를 찾을 수 없습니다.');
+                    }
+
+                    recordingStatus = '음성 처리 중...';
+                    const result = await processVoiceInput(
+                        audioBlob,
+                        currentStepInfo.label,
+                        currentStepInfo.field
+                    );
+                    
+                    if (result.success && result.processed_answer) {
+                        recordingStatus = `인식된 답변: ${result.raw_text}`;
+                        userInfo[currentStepInfo.field] = result.processed_answer;
+                        setTimeout(() => {
+                            if (isValidInput()) {
+                                handleNext();
+                            }
+                            recordingStatus = '';
+                        }, 2000);
+                    } else {
+                        throw new Error(result.error || '음성 처리에 실패했습니다.');
+                    }
+                } catch (error) {
+                    console.error('Voice processing error:', error);
+                    recordingStatus = '';
+                    errorMessage = error.message || '음성 처리 중 오류가 발생했습니다.';
+                } finally {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+            };
+
+            mediaRecorder.start();
+            recordingTimer = setInterval(updateRecordingTime, 1000);
+        } catch (error) {
+            console.error('Error accessing microphone:', error);
+            recordingStatus = '';
+            errorMessage = '마이크 접근에 실패했습니다.';
+        }
+    }
 </script>
 
 <div class="background">
@@ -255,6 +336,22 @@
 							on:input={handleInput}
 					>
 			{/if}
+
+			<!-- 음성 입력 상태 표시 -->
+			{#if recordingStatus}
+				<div class="recording-status">
+					{recordingStatus}
+				</div>
+			{/if}
+
+			<!-- 음성 입력 버튼 추가 -->
+			<button 
+				class="voice-input-button" 
+				class:recording={isRecording}
+				on:click={startVoiceInput}
+			>
+				{isRecording ? '녹음 중지' : '음성으로 답변하기'}
+			</button>
 
 			<div class="navigation">
 					<button on:click={handleBack}>뒤로가기</button>
@@ -404,4 +501,40 @@
 			50% { opacity: 0; }
 			100% { opacity: 1; }
 	}
+
+	.voice-input-button {
+        margin-top: 1em;
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        padding: 0.8em 1.5em;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .voice-input-button:hover {
+        background-color: #f50057;
+        transform: scale(1.05);
+    }
+
+	.recording-status {
+        margin: 1em 0;
+        padding: 0.5em;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        font-size: 1.1em;
+    }
+
+    .voice-input-button.recording {
+        background-color: #f50057;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
 </style>

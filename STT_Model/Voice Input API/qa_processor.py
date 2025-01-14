@@ -3,6 +3,8 @@ from kiwipiepy import Kiwi
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import re
+import logging
 
 class KoreanQAProcessor:
     def __init__(self):
@@ -16,108 +18,113 @@ class KoreanQAProcessor:
         )
         self.kiwi = Kiwi()
         
-        self.positive_words = {'맞습니다', '네', '맞아요', '그렇습니다', '동의합니다', '좋습니다'}
-        self.negative_words = {'아니요', '아닙니다', '틀립니다', '다릅니다', '반대합니다'}
+        self.positive_words = {'예', '네', '맞아요', '그렇습니다', '마십니다', '합니다', '좋습니다'}
+        self.negative_words = {'아니요', '아니오', '아닙니다', '안', '않', '없'}
         
-        self.male_indicators = {
-            '그': 0.6, '남자': 1.0, '남성': 1.0, '형': 0.8, '아들': 0.9,
-            '그는': 0.7, '그가': 0.7, '형님': 0.8, '아저씨': 0.8
+        self.walking_levels = {
+            '매우': 10000,
+            '많이': 8000,
+            '보통': 7000,
+            '조금': 5600,
+            '거의': 3000
         }
-        self.female_indicators = {
-            '그녀': 0.7, '여자': 1.0, '여성': 1.0, '누나': 0.8, '딸': 0.9,
-            '언니': 0.8, '아가씨': 0.8, '여사': 0.8
-        }
 
-    def analyze_tf_question(self, text):
-        """긍정/부정 분석을 통한 TF 판단"""
-        morphs = self.kiwi.analyze(text)[0][0]
-        words = [token for token, _, _, _ in morphs]
+    def extract_name(self, text):
+        """이름 추출"""
+        # "이름은 XXX" 패턴 찾기
+        name_pattern = re.search(r'이름[은는이가]\s*([가-힣]{2,4})', text)
+        if name_pattern:
+            return name_pattern.group(1)
         
-        positive_score = sum(1 for word in words if word in self.positive_words)
-        negative_score = sum(1 for word in words if word in self.negative_words)
-        
-        sentiment_words = {'좋': 1, '훌륭': 1, '긍정': 1, '맞': 1,
-                         '나쁘': -1, '틀린': -1, '부정': -1, '다르': -1}
-        
-        sentiment_score = 0
-        for word in words:
-            for key, value in sentiment_words.items():
-                if key in word:
-                    sentiment_score += value
-        
-        final_score = positive_score - negative_score + sentiment_score
-        return "O" if final_score >= 0 else "X"
+        # 형태소 분석으로 이름 후보 찾기
+        morphs = self.kiwi.analyze(text)
+        for word, pos, _, _ in morphs[0]:
+            if pos == 'NNP' and len(word) >= 2 and len(word) <= 4:
+                return word
+        return None
 
-    def analyze_gender_question(self, text):
-        """성별 관련 키워드 가중치 분석"""
-        morphs = self.kiwi.analyze(text)[0][0]
-        words = [token for token, _, _, _ in morphs]
+    def extract_number(self, text):
+        """숫자 추출"""
+        # 숫자 패턴 찾기 (정수 또는 소수)
+        numbers = re.findall(r'\d+\.?\d*', text)
+        if numbers:
+            return numbers[0]
         
-        male_score = 0
-        female_score = 0
+        # 한글 숫자 변환
+        korean_numbers = {'일':1, '이':2, '삼':3, '사':4, '오':5, 
+                         '육':6, '칠':7, '팔':8, '구':9, '십':10}
+        for kor, num in korean_numbers.items():
+            if kor in text:
+                return str(num)
+        return None
+
+    def check_yes_no(self, text):
+        """예/아니오 응답 확인"""
+        text = text.lower()
         
-        for word in words:
-            male_score += self.male_indicators.get(word, 0)
-            female_score += self.female_indicators.get(word, 0)
+        # 긍정 단어 확인
+        if any(word in text for word in self.positive_words):
+            return "예"
             
-        return "남자" if male_score >= female_score else "여자"
-
-    def analyze_multiple_choice(self, answer, choices):
-        """객관식 답안 분석"""
-        vectorizer = TfidfVectorizer()
-        
-        all_texts = choices + [answer]
-        tfidf_matrix = vectorizer.fit_transform(all_texts)
-        
-        similarities = cosine_similarity(
-            tfidf_matrix[-1:], 
-            tfidf_matrix[:-1]
-        )[0]
-        
-        most_similar_idx = np.argmax(similarities)
-        return str(most_similar_idx + 1)
-
-    def extract_core_info(self, text, question_type, choices=None):
-        """질문 유형에 따른 핵심 정보 추출"""
-        if question_type in ["TF", "O,X", "YN"]:
-            return self.analyze_tf_question(text)
+        # 부정 단어 확인
+        if any(word in text for word in self.negative_words):
+            return "아니오"
             
-        elif question_type in ["GENDER", "남녀"]:
-            return self.analyze_gender_question(text)
-            
-        elif question_type == "CHOICE" and choices:
-            return self.analyze_multiple_choice(text, choices)
-            
-        morphs = self.kiwi.analyze(text)[0][0]
+        return None
+
+    def extract_walking_level(self, text):
+        """걷기 운동량 수준 추출"""
+        for level, steps in self.walking_levels.items():
+            if level in text:
+                return steps
+        return 7000  # 기본값: 보통
+
+    def get_answer(self, question, context, question_type):
+        """질문 유형에 따른 답변 추출"""
+        logging.info(f"Processing answer - Type: {question_type}, Context: {context}")
         
-        if question_type == "이름":
-            for token, pos, _, _ in morphs:
-                if pos == 'NNP' and len(token) <= 4:
-                    return token
-                    
-        elif question_type == "나이":
-            for token, pos, _, _ in morphs:
-                if pos == 'SN':
-                    return token
-                    
-        elif question_type == "직업":
-            job_tokens = []
-            for token, pos, _, _ in morphs:
-                if pos in ['NNG', 'NNP'] and token not in ['직업']:
-                    job_tokens.append(token)
-            return ' '.join(job_tokens)
-            
-        elif question_type == "취미":
-            hobby_tokens = []
-            for token, pos, _, _ in morphs:
-                if pos in ['NNG', 'NNP'] and token not in ['취미']:
-                    hobby_tokens.append(token)
-            return hobby_tokens[0] if hobby_tokens else ""
+        try:
+            if question_type == 'name':
+                answer = self.extract_name(context)
+                logging.info(f"Extracted name: {answer}")
+                return answer
 
-        return ""
+            elif question_type == 'age':
+                answer = self.extract_number(context)
+                logging.info(f"Extracted age: {answer}")
+                return answer
 
-    def get_answer(self, question, context, question_type, choices=None):
-        """질문에 대한 답변 추출 및 정제"""
-        result = self.qa_pipeline(question=question, context=context)
-        clean_answer = self.extract_core_info(result['answer'], question_type, choices)
-        return clean_answer
+            elif question_type == 'sex':
+                if '남' in context:
+                    return '남자'
+                elif '여' in context:
+                    return '여자'
+                return None
+
+            elif question_type in ['weight', 'height', 'sleepTime', 'heartRate']:
+                answer = self.extract_number(context)
+                logging.info(f"Extracted number for {question_type}: {answer}")
+                return answer
+
+            elif question_type in ['drink', 'smoke', 'fatigue', 'cholesterol']:
+                answer = self.check_yes_no(context)
+                logging.info(f"Extracted yes/no for {question_type}: {answer}")
+                return answer
+
+            elif question_type == 'walking':
+                answer = self.extract_walking_level(context)
+                logging.info(f"Extracted walking level: {answer}")
+                return answer
+
+            elif question_type in ['systolicBP', 'diastolicBP']:
+                numbers = re.findall(r'\d+', context)
+                if len(numbers) >= 2:
+                    return numbers[0] if question_type == 'systolicBP' else numbers[1]
+                return None
+
+            logging.warning(f"Unknown question type: {question_type}")
+            return None
+
+        except Exception as e:
+            logging.error(f"Error processing answer: {str(e)}")
+            return None
