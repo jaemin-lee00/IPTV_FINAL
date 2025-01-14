@@ -7,6 +7,12 @@ from audio_processor import process_audio_file
 from qa_processor import KoreanQAProcessor
 import uvicorn
 
+'''
+make the program run by one key
+compress the process
+or make the program like exe file
+'''
+
 # 로깅 설정
 logging.basicConfig(
     level=logging.INFO,
