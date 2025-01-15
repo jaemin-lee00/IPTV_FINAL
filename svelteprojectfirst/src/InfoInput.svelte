@@ -1,5 +1,6 @@
 <script>
 	import { createEventDispatcher, onMount } from 'svelte';
+	import { processVoiceInput } from './services/voiceService';
 	
 	const dispatch = createEventDispatcher();
 
@@ -45,6 +46,13 @@
 
 	onMount(() => {
 			startTyping();
+			// 키보드 이벤트 리스너 추가
+			window.addEventListener('keydown', handleKeydown);
+			
+			// 컴포넌트 제거 시 이벤트 리스너 정리
+			return () => {
+					window.removeEventListener('keydown', handleKeydown);
+			}
 	});
 
     // steps 배열이나 currentStep이 변경될 때마다 타이핑 효과 재시작
@@ -195,6 +203,94 @@
 					event.target.value = event.target.value.replace(/[^가-힣a-zA-Z\s]/g, '');
 			}
 	}
+
+	let isRecording = false;
+    let mediaRecorder;
+    let audioChunks = [];
+    let recordingStatus = '';
+    let recordingTime = 0;
+    let recordingTimer;
+
+    function updateRecordingTime() {
+        recordingTime++;
+        recordingStatus = `녹음 중... (${recordingTime}초)`;
+    }
+
+    async function startVoiceInput() {
+        if (isRecording) {
+            clearInterval(recordingTimer);
+            recordingStatus = '녹음 처리 중...';
+            mediaRecorder.stop();
+            isRecording = false;
+            return;
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            isRecording = true;
+            audioChunks = [];
+            recordingTime = 0;
+            recordingStatus = '녹음 시작...';
+            errorMessage = '';
+
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = (event) => {
+                audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = async () => {
+                try {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const currentStepInfo = steps[currentStep];
+                    
+                    if (!currentStepInfo) {
+                        throw new Error('현재 단계 정보를 찾을 수 없습니다.');
+                    }
+
+                    recordingStatus = '음성 처리 중...';
+                    const result = await processVoiceInput(
+                        audioBlob,
+                        currentStepInfo.label,
+                        currentStepInfo.field
+                    );
+                    
+                    if (result.success && result.processed_answer) {
+                        recordingStatus = `인식된 답변: ${result.raw_text}`;
+                        userInfo[currentStepInfo.field] = result.processed_answer;
+                        setTimeout(() => {
+                            if (isValidInput()) {
+                                handleNext();
+                            }
+                            recordingStatus = '';
+                        }, 2000);
+                    } else {
+                        throw new Error(result.error || '음성 처리에 실패했습니다.');
+                    }
+                } catch (error) {
+                    console.error('Voice processing error:', error);
+                    recordingStatus = '';
+                    errorMessage = error.message || '음성 처리 중 오류가 발생했습니다.';
+                } finally {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+            };
+
+            mediaRecorder.start();
+            recordingTimer = setInterval(updateRecordingTime, 1000);
+        } catch (error) {
+            console.error('Error accessing microphone:', error);
+            recordingStatus = '';
+            errorMessage = '마이크 접근에 실패했습니다.';
+        }
+    }
+
+	// 키보드 이벤트 핸들러 추가
+	function handleKeydown(event) {
+		if (event.code === 'Space') {
+			event.preventDefault(); // 스페이스바의 기본 동작 방지
+			startVoiceInput();
+		}
+	}
 </script>
 
 <div class="background">
@@ -255,6 +351,23 @@
 							on:input={handleInput}
 					>
 			{/if}
+
+			<!-- 통합된 음성 입력 UI -->
+			<div class="voice-input-container">
+				{#if recordingStatus}
+					<div class="recording-status">
+						{recordingStatus}
+					</div>
+				{/if}
+				<button 
+					class="voice-input-button" 
+					class:recording={isRecording}
+					on:click={startVoiceInput}
+				>
+					<span class="mic-icon">🎤</span>
+					{isRecording ? '녹음 중지하기 (Space)' : '음성으로 답변하기 (Space)'}
+				</button>
+			</div>
 
 			<div class="navigation">
 					<button on:click={handleBack}>뒤로가기</button>
@@ -403,5 +516,61 @@
 			0% { opacity: 1; }
 			50% { opacity: 0; }
 			100% { opacity: 1; }
+	}
+
+	.voice-input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em 0;
+    }
+
+    .voice-input-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        padding: 0.8em 1.5em;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.1em;
+    }
+
+    .mic-icon {
+        font-size: 1.2em;
+    }
+
+    .voice-input-button:hover {
+        background-color: #f50057;
+        transform: scale(1.05);
+    }
+
+    .voice-input-button.recording {
+        background-color: #f50057;
+        animation: pulse 1.5s infinite;
+    }
+
+    .recording-status {
+        margin: 1em 0;
+        padding: 0.5em 1em;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        font-size: 1.1em;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
 	}
 </style>

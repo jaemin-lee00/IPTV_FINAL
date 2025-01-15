@@ -1,0 +1,1047 @@
+2025-01-14 11:49:16,085 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 11:49:20,162 - INFO - 모델 로딩 완료 (소요 시간: 5.88초)
+2025-01-14 11:50:17,323 - INFO - Received voice request - Question: , Type: 
+2025-01-14 11:50:17,324 - INFO - Audio file size: 116753 bytes
+2025-01-14 11:50:17,325 - INFO - Saved temporary file: temp_.wav
+2025-01-14 11:50:17,502 - INFO - Processing audio with duration 00:07.200
+2025-01-14 11:50:18,505 - INFO - Detected language 'ko' with probability 0.92
+2025-01-14 11:50:18,508 - INFO - 
+[temp_.wav] 처리 결과:
+2025-01-14 11:50:18,509 - INFO - 파일 처리 시간: 1.18초
+2025-01-14 11:50:18,509 - INFO - 감지된 언어: ko (확률: 0.92)
+2025-01-14 11:50:19,574 - INFO - [0.00s -> 1.80s]  확인 확인, 음성 확인
+2025-01-14 11:50:19,575 - INFO - [1.80s -> 5.68s]  녹음 음성 확인, 녹음 음성 확인
+2025-01-14 11:50:19,575 - INFO - [5.68s -> 6.76s]  내 이름은 이재민
+2025-01-14 11:50:19,576 - INFO - Extracted text:  확인 확인, 음성 확인  녹음 음성 확인, 녹음 음성 확인  내 이름은 이재민
+2025-01-14 11:50:19,576 - ERROR - Error processing voice: `question` cannot be empty
+2025-01-14 11:50:19,577 - INFO - Removed temporary file: temp_.wav
+2025-01-14 11:58:10,058 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 11:58:14,122 - INFO - 모델 로딩 완료 (소요 시간: 5.87초)
+2025-01-14 11:58:35,865 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 11:58:35,865 - INFO - Audio file size: 82117 bytes
+2025-01-14 11:58:35,866 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 11:58:36,028 - INFO - Processing audio with duration 00:05.040
+2025-01-14 11:58:36,900 - INFO - Detected language 'ko' with probability 0.88
+2025-01-14 11:58:36,903 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 11:58:36,904 - INFO - 파일 처리 시간: 1.04초
+2025-01-14 11:58:36,904 - INFO - 감지된 언어: ko (확률: 0.88)
+2025-01-14 11:58:37,449 - INFO - [0.00s -> 5.04s]  수업 같은 거 배우는데
+2025-01-14 11:58:37,450 - INFO - Extracted text: 수업 같은 거 배우는데
+2025-01-14 11:58:39,225 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 11:59:16,301 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 11:59:16,302 - INFO - Audio file size: 92727 bytes
+2025-01-14 11:59:16,303 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 11:59:16,486 - INFO - Processing audio with duration 00:05.700,
+2025-01-14 11:59:17,120 - INFO - Detected language 'ko' with probability 0.90
+2025-01-14 11:59:17,122 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 11:59:17,123 - INFO - 파일 처리 시간: 0.82초
+2025-01-14 11:59:17,123 - INFO - 감지된 언어: ko (확률: 0.90)
+2025-01-14 11:59:18,052 - INFO - [0.00s -> 5.28s]  모금 시작, 모금 시작. 내 이름은 이재민, 내 이름은 이재민.
+2025-01-14 11:59:18,052 - INFO - Extracted text: 모금 시작, 모금 시작. 내 이름은 이재민, 내 이름은 이재민.
+2025-01-14 11:59:18,073 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 12:06:36,190 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 12:06:40,111 - INFO - 모델 로딩 완료 (소요 시간: 4.52초)
+2025-01-14 12:07:16,629 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 12:07:16,633 - INFO - Audio file size: 83030 bytes
+2025-01-14 12:07:16,633 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 12:07:16,817 - INFO - Processing audio with duration 00:05.100
+2025-01-14 12:07:17,846 - INFO - Detected language 'ko' with probability 0.39
+2025-01-14 12:07:17,849 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 12:07:17,850 - INFO - 파일 처리 시간: 1.22초
+2025-01-14 12:07:17,850 - INFO - 감지된 언어: ko (확률: 0.39)
+2025-01-14 12:07:18,341 - INFO - [0.00s -> 5.10s]  녹음 시작
+2025-01-14 12:07:18,341 - INFO - Extracted text: 녹음 시작
+2025-01-14 12:07:20,150 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 12:07:41,511 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 12:07:41,512 - INFO - Audio file size: 105456 bytes
+2025-01-14 12:07:41,513 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 12:07:41,699 - INFO - Processing audio with duration 00:06.480
+2025-01-14 12:07:42,219 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 12:07:42,221 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 12:07:42,221 - INFO - 파일 처리 시간: 0.71초
+2025-01-14 12:07:42,222 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 12:07:43,081 - INFO - [0.00s -> 6.48s]  녹음 시작 녹음 시작 내 이름은 이재민 내 이름은 이재민
+2025-01-14 12:07:43,081 - INFO - Extracted text: 녹음 시작 녹음 시작 내 이름은 이재민 내 이름은 이재민
+2025-01-14 12:07:43,098 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 12:08:16,840 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 12:08:20,733 - INFO - 모델 로딩 완료 (소요 시간: 5.73초)
+2025-01-14 12:08:36,676 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 12:08:36,677 - INFO - Audio file size: 88835 bytes
+2025-01-14 12:08:36,678 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 12:08:36,850 - INFO - Processing audio with duration 00:05.460
+2025-01-14 12:08:37,813 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 12:08:37,816 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 12:08:37,817 - INFO - 파일 처리 시간: 1.14초
+2025-01-14 12:08:37,817 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 12:08:38,578 - INFO - [0.00s -> 5.46s]  지금 시작 내 이름은 이재민 내 이름은 이재민
+2025-01-14 12:08:38,578 - INFO - Extracted text: 지금 시작 내 이름은 이재민 내 이름은 이재민
+2025-01-14 12:08:38,579 - INFO - Processing answer - Type: name, Context: 지금 시작 내 이름은 이재민 내 이름은 이재민
+2025-01-14 12:08:38,580 - INFO - Extracted name: 이재민
+2025-01-14 12:08:38,581 - INFO - Processed answer: 이재민
+2025-01-14 12:08:38,581 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 12:08:53,104 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 12:08:53,105 - INFO - Audio file size: 63565 bytes
+2025-01-14 12:08:53,106 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 12:08:53,275 - INFO - Processing audio with duration 00:03.900
+2025-01-14 12:08:53,784 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 12:08:53,786 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 12:08:53,787 - INFO - 파일 처리 시간: 0.68초
+2025-01-14 12:08:53,787 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 12:08:54,387 - INFO - [0.00s -> 3.90s]  나이 28살, 나이가 많다.
+2025-01-14 12:08:54,388 - INFO - Extracted text: 나이 28살, 나이가 많다.
+2025-01-14 12:08:54,388 - INFO - Processing answer - Type: age, Context: 나이 28살, 나이가 많다.
+2025-01-14 12:08:54,389 - INFO - Extracted age: 28
+2025-01-14 12:08:54,389 - INFO - Processed answer: 28
+2025-01-14 12:08:54,389 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 12:09:01,907 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-14 12:09:01,908 - INFO - Audio file size: 48091 bytes
+2025-01-14 12:09:01,909 - INFO - Saved temporary file: temp_sex.wav
+2025-01-14 12:09:02,077 - INFO - Processing audio with duration 00:02.940
+2025-01-14 12:09:02,583 - INFO - Detected language 'ko' with probability 0.94
+2025-01-14 12:09:02,585 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-14 12:09:02,585 - INFO - 파일 처리 시간: 0.68초
+2025-01-14 12:09:02,586 - INFO - 감지된 언어: ko (확률: 0.94)
+2025-01-14 12:09:03,044 - INFO - [0.00s -> 2.34s]  나는 남사제
+2025-01-14 12:09:03,045 - INFO - Extracted text: 나는 남사제
+2025-01-14 12:09:03,045 - INFO - Processing answer - Type: sex, Context: 나는 남사제
+2025-01-14 12:09:03,045 - INFO - Processed answer: 남자
+2025-01-14 12:09:03,046 - INFO - Removed temporary file: temp_sex.wav
+2025-01-14 12:09:25,024 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 12:09:25,025 - INFO - Audio file size: 62373 bytes
+2025-01-14 12:09:25,026 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 12:09:25,193 - INFO - Processing audio with duration 00:03.840
+2025-01-14 12:09:25,763 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 12:09:25,765 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 12:09:25,765 - INFO - 파일 처리 시간: 0.74초
+2025-01-14 12:09:25,766 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 12:09:26,483 - INFO - [0.00s -> 3.84s]  네 내 몸무게 한 육십 키로쯤 되지
+2025-01-14 12:09:26,483 - INFO - Extracted text: 네 내 몸무게 한 육십 키로쯤 되지
+2025-01-14 12:09:26,483 - INFO - Processing answer - Type: weight, Context: 네 내 몸무게 한 육십 키로쯤 되지
+2025-01-14 12:09:26,484 - INFO - Extracted number for weight: 6
+2025-01-14 12:09:26,484 - INFO - Processed answer: 6
+2025-01-14 12:09:26,484 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 12:09:36,326 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 12:09:36,327 - INFO - Audio file size: 69330 bytes
+2025-01-14 12:09:36,328 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 12:09:36,497 - INFO - Processing audio with duration 00:04.260
+2025-01-14 12:09:36,968 - INFO - Detected language 'ko' with probability 0.95
+2025-01-14 12:09:36,971 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 12:09:36,971 - INFO - 파일 처리 시간: 0.64초
+2025-01-14 12:09:36,972 - INFO - 감지된 언어: ko (확률: 0.95)
+2025-01-14 12:09:37,618 - INFO - [0.00s -> 4.24s]  내 키 180cm쯤 된다 180cm
+2025-01-14 12:09:37,618 - INFO - Extracted text: 내 키 180cm쯤 된다 180cm
+2025-01-14 12:09:37,619 - INFO - Processing answer - Type: height, Context: 내 키 180cm쯤 된다 180cm
+2025-01-14 12:09:37,619 - INFO - Extracted number for height: 180
+2025-01-14 12:09:37,619 - INFO - Processed answer: 180
+2025-01-14 12:09:37,620 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 12:09:46,062 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 12:09:46,063 - INFO - Audio file size: 72326 bytes
+2025-01-14 12:09:46,064 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 12:09:46,236 - INFO - Processing audio with duration 00:04.440
+2025-01-14 12:09:46,761 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 12:09:46,762 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 12:09:46,763 - INFO - 파일 처리 시간: 0.70초
+2025-01-14 12:09:46,763 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 12:09:47,501 - INFO - [0.00s -> 4.44s]  여덟 시간 추울 숙면 꿀잠 잔다
+2025-01-14 12:09:47,502 - INFO - Extracted text: 여덟 시간 추울 숙면 꿀잠 잔다
+2025-01-14 12:09:47,502 - INFO - Processing answer - Type: sleepTime, Context: 여덟 시간 추울 숙면 꿀잠 잔다
+2025-01-14 12:09:47,503 - INFO - Extracted number for sleepTime: None
+2025-01-14 12:09:47,503 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 12:09:54,832 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 12:09:54,833 - INFO - Audio file size: 89763 bytes
+2025-01-14 12:09:54,834 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 12:09:55,004 - INFO - Processing audio with duration 00:05.520
+2025-01-14 12:09:55,572 - INFO - Detected language 'ko' with probability 0.97
+2025-01-14 12:09:55,575 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 12:09:55,575 - INFO - 파일 처리 시간: 0.74초
+2025-01-14 12:09:55,575 - INFO - 감지된 언어: ko (확률: 0.97)
+2025-01-14 12:09:56,291 - INFO - [0.00s -> 5.52s]  여덟 시간 푹 잔다 여덟 시간 동안
+2025-01-14 12:09:56,291 - INFO - Extracted text: 여덟 시간 푹 잔다 여덟 시간 동안
+2025-01-14 12:09:56,292 - INFO - Processing answer - Type: sleepTime, Context: 여덟 시간 푹 잔다 여덟 시간 동안
+2025-01-14 12:09:56,292 - INFO - Extracted number for sleepTime: None
+2025-01-14 12:09:56,294 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 12:10:18,967 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 12:10:18,968 - INFO - Audio file size: 100553 bytes
+2025-01-14 12:10:18,969 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 12:10:19,150 - INFO - Processing audio with duration 00:06.180
+2025-01-14 12:10:19,765 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 12:10:19,767 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 12:10:19,768 - INFO - 파일 처리 시간: 0.80초
+2025-01-14 12:10:19,769 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 12:10:20,411 - INFO - [0.00s -> 6.18s]  저는 하루에 여덟 시간 자요 팔 시간
+2025-01-14 12:10:20,412 - INFO - Extracted text: 저는 하루에 여덟 시간 자요 팔 시간
+2025-01-14 12:10:20,412 - INFO - Processing answer - Type: sleepTime, Context: 저는 하루에 여덟 시간 자요 팔 시간
+2025-01-14 12:10:20,412 - INFO - Extracted number for sleepTime: 8
+2025-01-14 12:10:20,412 - INFO - Processed answer: 8
+2025-01-14 12:10:20,413 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 12:11:01,070 - INFO - Received voice request - Question: 평소에 걷기 운동을 얼마나 하시나요?, Type: walking
+2025-01-14 12:11:01,071 - INFO - Audio file size: 94426 bytes
+2025-01-14 12:11:01,072 - INFO - Saved temporary file: temp_walking.wav
+2025-01-14 12:11:01,253 - INFO - Processing audio with duration 00:05.820
+2025-01-14 12:11:01,743 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 12:11:01,746 - INFO - 
+[temp_walking.wav] 처리 결과:
+2025-01-14 12:11:01,746 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 12:11:01,747 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 12:11:02,484 - INFO - [0.00s -> 5.80s]  그리고 평소에 좀 많이 걷지 매우 많이 걷지
+2025-01-14 12:11:02,485 - INFO - Extracted text: 그리고 평소에 좀 많이 걷지 매우 많이 걷지
+2025-01-14 12:11:02,485 - INFO - Processing answer - Type: walking, Context: 그리고 평소에 좀 많이 걷지 매우 많이 걷지
+2025-01-14 12:11:02,485 - INFO - Extracted walking level: 10000
+2025-01-14 12:11:02,485 - INFO - Processed answer: 10000
+2025-01-14 12:11:02,486 - INFO - Removed temporary file: temp_walking.wav
+2025-01-14 12:11:11,776 - INFO - Received voice request - Question: 콜레스테롤이 높다고 들어보셨나요?, Type: cholesterol
+2025-01-14 12:11:11,777 - INFO - Audio file size: 78115 bytes
+2025-01-14 12:11:11,778 - INFO - Saved temporary file: temp_cholesterol.wav
+2025-01-14 12:11:11,958 - INFO - Processing audio with duration 00:04.800
+2025-01-14 12:11:12,541 - INFO - Detected language 'ko' with probability 0.97
+2025-01-14 12:11:12,543 - INFO - 
+[temp_cholesterol.wav] 처리 결과:
+2025-01-14 12:11:12,543 - INFO - 파일 처리 시간: 0.77초
+2025-01-14 12:11:12,544 - INFO - 감지된 언어: ko (확률: 0.97)
+2025-01-14 12:11:13,303 - INFO - [0.00s -> 4.80s]  아니요 나는 콜레스테롤이 높지 않아요
+2025-01-14 12:11:13,304 - INFO - Extracted text: 아니요 나는 콜레스테롤이 높지 않아요
+2025-01-14 12:11:13,304 - INFO - Processing answer - Type: cholesterol, Context: 아니요 나는 콜레스테롤이 높지 않아요
+2025-01-14 12:11:13,305 - INFO - Extracted yes/no for cholesterol: 아니오
+2025-01-14 12:11:13,305 - INFO - Processed answer: 아니오
+2025-01-14 12:11:13,306 - INFO - Removed temporary file: temp_cholesterol.wav
+2025-01-14 17:24:49,031 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:24:53,384 - INFO - 모델 로딩 완료 (소요 시간: 6.18초)
+2025-01-14 17:26:08,524 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:26:08,524 - INFO - Audio file size: 94742 bytes
+2025-01-14 17:26:08,525 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:26:08,719 - INFO - Processing audio with duration 00:05.820
+2025-01-14 17:26:10,005 - INFO - Detected language 'ko' with probability 0.74
+2025-01-14 17:26:10,008 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:26:10,008 - INFO - 파일 처리 시간: 1.48초
+2025-01-14 17:26:10,009 - INFO - 감지된 언어: ko (확률: 0.74)
+2025-01-14 17:26:10,745 - INFO - [0.00s -> 5.80s]  어 어 내 이름 이재민 내 이름 이재민
+2025-01-14 17:26:10,745 - INFO - Extracted text: 어 어 내 이름 이재민 내 이름 이재민
+2025-01-14 17:26:10,746 - INFO - Processing answer - Type: name, Context: 어 어 내 이름 이재민 내 이름 이재민
+2025-01-14 17:26:12,277 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-14 17:26:12,278 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:26:37,514 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:26:37,515 - INFO - Audio file size: 55882 bytes
+2025-01-14 17:26:37,515 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:26:37,621 - INFO - Processing audio with duration 00:03.420
+2025-01-14 17:26:38,186 - INFO - Detected language 'ja' with probability 0.43
+2025-01-14 17:26:38,188 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:26:38,189 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:26:38,189 - INFO - 감지된 언어: ja (확률: 0.43)
+2025-01-14 17:26:39,044 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-14 17:26:39,046 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:27:01,296 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:27:01,297 - INFO - Audio file size: 66585 bytes
+2025-01-14 17:27:01,299 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:27:01,469 - INFO - Processing audio with duration 00:04.080
+2025-01-14 17:27:01,970 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:27:01,972 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:27:01,972 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:27:01,973 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:27:02,644 - INFO - [0.00s -> 4.06s]  친구야 내 이름 이재민이라고 이재민
+2025-01-14 17:27:02,645 - INFO - Extracted text: 친구야 내 이름 이재민이라고 이재민
+2025-01-14 17:27:02,645 - INFO - Processing answer - Type: name, Context: 친구야 내 이름 이재민이라고 이재민
+2025-01-14 17:27:02,647 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-14 17:27:02,647 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:28:10,236 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:28:13,601 - INFO - 모델 로딩 완료 (소요 시간: 3.45초)
+2025-01-14 17:28:36,925 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:28:36,926 - INFO - Audio file size: 93669 bytes
+2025-01-14 17:28:36,927 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:28:37,093 - INFO - Processing audio with duration 00:05.760
+2025-01-14 17:28:38,115 - INFO - Detected language 'ko' with probability 0.90
+2025-01-14 17:28:38,118 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:28:38,118 - INFO - 파일 처리 시간: 1.19초
+2025-01-14 17:28:38,119 - INFO - 감지된 언어: ko (확률: 0.90)
+2025-01-14 17:28:39,008 - INFO - [0.00s -> 5.54s]  내 이름은 이재민 이재라이 이재민 이재라이
+2025-01-14 17:28:39,009 - INFO - Extracted text: 내 이름은 이재민 이재라이 이재민 이재라이
+2025-01-14 17:28:39,009 - INFO - Processing answer - Type: name, Context: 내 이름은 이재민 이재라이 이재민 이재라이
+2025-01-14 17:28:39,010 - INFO - Extracted name: 이재민
+2025-01-14 17:28:39,011 - INFO - Processed answer: 이재민
+2025-01-14 17:28:39,012 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:28:51,047 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:28:51,047 - INFO - Audio file size: 125802 bytes
+2025-01-14 17:28:51,048 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:28:51,227 - INFO - Processing audio with duration 00:07.740
+2025-01-14 17:28:51,873 - INFO - Detected language 'ko' with probability 0.95
+2025-01-14 17:28:51,875 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:28:51,875 - INFO - 파일 처리 시간: 0.83초
+2025-01-14 17:28:51,875 - INFO - 감지된 언어: ko (확률: 0.95)
+2025-01-14 17:28:52,547 - INFO - [0.00s -> 6.00s]  내 나이 이제 28쯤 됐다
+2025-01-14 17:28:52,547 - INFO - Extracted text: 내 나이 이제 28쯤 됐다
+2025-01-14 17:28:52,547 - INFO - Processing answer - Type: age, Context: 내 나이 이제 28쯤 됐다
+2025-01-14 17:28:52,548 - INFO - Extracted age: 28
+2025-01-14 17:28:52,548 - INFO - Processed answer: 28
+2025-01-14 17:28:52,549 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:29:01,026 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-14 17:29:01,026 - INFO - Audio file size: 71282 bytes
+2025-01-14 17:29:01,027 - INFO - Saved temporary file: temp_sex.wav
+2025-01-14 17:29:01,180 - INFO - Processing audio with duration 00:04.380
+2025-01-14 17:29:01,684 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:29:01,686 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-14 17:29:01,687 - INFO - 파일 처리 시간: 0.66초
+2025-01-14 17:29:01,687 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:29:02,220 - INFO - [0.00s -> 4.36s]  나는 남자 대 남자 먹스마
+2025-01-14 17:29:02,220 - INFO - Extracted text: 나는 남자 대 남자 먹스마
+2025-01-14 17:29:02,220 - INFO - Processing answer - Type: sex, Context: 나는 남자 대 남자 먹스마
+2025-01-14 17:29:02,221 - INFO - Processed answer: 남자
+2025-01-14 17:29:02,221 - INFO - Removed temporary file: temp_sex.wav
+2025-01-14 17:29:10,555 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 17:29:10,556 - INFO - Audio file size: 70269 bytes
+2025-01-14 17:29:10,557 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 17:29:10,724 - INFO - Processing audio with duration 00:04.320
+2025-01-14 17:29:11,289 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:29:11,291 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 17:29:11,292 - INFO - 파일 처리 시간: 0.73초
+2025-01-14 17:29:11,292 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:29:12,296 - INFO - [4.30s -> 34.28s]  자막 제공 배달의민족
+2025-01-14 17:29:12,297 - INFO - Extracted text: 자막 제공 배달의민족
+2025-01-14 17:29:12,297 - INFO - Processing answer - Type: weight, Context: 자막 제공 배달의민족
+2025-01-14 17:29:12,298 - INFO - Extracted number for weight: None
+2025-01-14 17:29:12,299 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 17:29:31,632 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 17:29:31,632 - INFO - Audio file size: 83086 bytes
+2025-01-14 17:29:31,633 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 17:29:31,805 - INFO - Processing audio with duration 00:05.100
+2025-01-14 17:29:32,276 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:29:32,279 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 17:29:32,279 - INFO - 파일 처리 시간: 0.65초
+2025-01-14 17:29:32,280 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:29:33,020 - INFO - [0.00s -> 5.08s]  내 몸무게가 한 육십 키로 쯤 된다
+2025-01-14 17:29:33,020 - INFO - Extracted text: 내 몸무게가 한 육십 키로 쯤 된다
+2025-01-14 17:29:33,021 - INFO - Processing answer - Type: weight, Context: 내 몸무게가 한 육십 키로 쯤 된다
+2025-01-14 17:29:33,021 - INFO - Extracted number for weight: 10
+2025-01-14 17:29:33,022 - INFO - Processed answer: 10
+2025-01-14 17:29:33,022 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 17:29:47,602 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 17:29:47,602 - INFO - Audio file size: 91777 bytes
+2025-01-14 17:29:47,603 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 17:29:47,772 - INFO - Processing audio with duration 00:05.640
+2025-01-14 17:29:48,274 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:29:48,276 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 17:29:48,277 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:29:48,277 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:29:48,904 - INFO - [0.00s -> 5.64s]  내 키가 한 180 180쯤 되지
+2025-01-14 17:29:48,905 - INFO - Extracted text: 내 키가 한 180 180쯤 되지
+2025-01-14 17:29:48,905 - INFO - Processing answer - Type: height, Context: 내 키가 한 180 180쯤 되지
+2025-01-14 17:29:48,906 - INFO - Extracted number for height: 180
+2025-01-14 17:29:48,906 - INFO - Processed answer: 180
+2025-01-14 17:29:48,907 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 17:29:58,382 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 17:29:58,383 - INFO - Audio file size: 73154 bytes
+2025-01-14 17:29:58,383 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 17:29:58,545 - INFO - Processing audio with duration 00:04.500
+2025-01-14 17:29:59,052 - INFO - Detected language 'ko' with probability 0.90
+2025-01-14 17:29:59,055 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 17:29:59,055 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:29:59,056 - INFO - 감지된 언어: ko (확률: 0.90)
+2025-01-14 17:29:59,626 - INFO - [0.00s -> 4.48s]  한 8시간쯤 되었다 8시간
+2025-01-14 17:29:59,627 - INFO - Extracted text: 한 8시간쯤 되었다 8시간
+2025-01-14 17:29:59,627 - INFO - Processing answer - Type: sleepTime, Context: 한 8시간쯤 되었다 8시간
+2025-01-14 17:29:59,628 - INFO - Extracted number for sleepTime: 8
+2025-01-14 17:29:59,628 - INFO - Processed answer: 8
+2025-01-14 17:29:59,629 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 17:30:06,964 - INFO - Received voice request - Question: 술을 드시나요?, Type: drink
+2025-01-14 17:30:06,965 - INFO - Audio file size: 58736 bytes
+2025-01-14 17:30:06,966 - INFO - Saved temporary file: temp_drink.wav
+2025-01-14 17:30:07,134 - INFO - Processing audio with duration 00:03.600
+2025-01-14 17:30:07,653 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 17:30:07,656 - INFO - 
+[temp_drink.wav] 처리 결과:
+2025-01-14 17:30:07,656 - INFO - 파일 처리 시간: 0.69초
+2025-01-14 17:30:07,656 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 17:30:08,166 - INFO - [0.00s -> 3.60s]  술 좀 묵지
+2025-01-14 17:30:08,166 - INFO - Extracted text: 술 좀 묵지
+2025-01-14 17:30:08,167 - INFO - Processing answer - Type: drink, Context: 술 좀 묵지
+2025-01-14 17:30:08,167 - INFO - Extracted yes/no for drink: None
+2025-01-14 17:30:08,168 - INFO - Removed temporary file: temp_drink.wav
+2025-01-14 17:30:13,751 - INFO - Received voice request - Question: 술을 드시나요?, Type: drink
+2025-01-14 17:30:13,752 - INFO - Audio file size: 65508 bytes
+2025-01-14 17:30:13,753 - INFO - Saved temporary file: temp_drink.wav
+2025-01-14 17:30:13,913 - INFO - Processing audio with duration 00:04.020
+2025-01-14 17:30:14,439 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:30:14,442 - INFO - 
+[temp_drink.wav] 처리 결과:
+2025-01-14 17:30:14,443 - INFO - 파일 처리 시간: 0.69초
+2025-01-14 17:30:14,443 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:30:14,970 - INFO - [0.00s -> 4.00s]  그래 예예 술 먹습니다요
+2025-01-14 17:30:14,971 - INFO - Extracted text: 그래 예예 술 먹습니다요
+2025-01-14 17:30:14,971 - INFO - Processing answer - Type: drink, Context: 그래 예예 술 먹습니다요
+2025-01-14 17:30:14,971 - INFO - Extracted yes/no for drink: 예
+2025-01-14 17:30:14,972 - INFO - Processed answer: 예
+2025-01-14 17:30:14,972 - INFO - Removed temporary file: temp_drink.wav
+2025-01-14 17:30:22,252 - INFO - Received voice request - Question: 담배를 피우시나요?, Type: smoke
+2025-01-14 17:30:22,253 - INFO - Audio file size: 59730 bytes
+2025-01-14 17:30:22,254 - INFO - Saved temporary file: temp_smoke.wav
+2025-01-14 17:30:22,416 - INFO - Processing audio with duration 00:03.660
+2025-01-14 17:30:23,038 - INFO - Detected language 'ko' with probability 0.77
+2025-01-14 17:30:23,040 - INFO - 
+[temp_smoke.wav] 처리 결과:
+2025-01-14 17:30:23,041 - INFO - 파일 처리 시간: 0.79초
+2025-01-14 17:30:23,041 - INFO - 감지된 언어: ko (확률: 0.77)
+2025-01-14 17:30:23,568 - INFO - [0.00s -> 3.64s]  네 네 담배 태워요
+2025-01-14 17:30:23,568 - INFO - Extracted text: 네 네 담배 태워요
+2025-01-14 17:30:23,569 - INFO - Processing answer - Type: smoke, Context: 네 네 담배 태워요
+2025-01-14 17:30:23,569 - INFO - Extracted yes/no for smoke: 예
+2025-01-14 17:30:23,570 - INFO - Processed answer: 예
+2025-01-14 17:30:23,571 - INFO - Removed temporary file: temp_smoke.wav
+2025-01-14 17:30:32,545 - INFO - Received voice request - Question: 평소에 피로감을 느끼시나요?, Type: fatigue
+2025-01-14 17:30:32,546 - INFO - Audio file size: 74349 bytes
+2025-01-14 17:30:32,547 - INFO - Saved temporary file: temp_fatigue.wav
+2025-01-14 17:30:32,709 - INFO - Processing audio with duration 00:04.560
+2025-01-14 17:30:33,258 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:30:33,260 - INFO - 
+[temp_fatigue.wav] 처리 결과:
+2025-01-14 17:30:33,261 - INFO - 파일 처리 시간: 0.71초
+2025-01-14 17:30:33,261 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:30:33,792 - INFO - [0.00s -> 4.54s]  요즘에 좀 피로합니다
+2025-01-14 17:30:33,793 - INFO - Extracted text: 요즘에 좀 피로합니다
+2025-01-14 17:30:33,793 - INFO - Processing answer - Type: fatigue, Context: 요즘에 좀 피로합니다
+2025-01-14 17:30:33,793 - INFO - Extracted yes/no for fatigue: 예
+2025-01-14 17:30:33,794 - INFO - Processed answer: 예
+2025-01-14 17:30:33,794 - INFO - Removed temporary file: temp_fatigue.wav
+2025-01-14 17:30:47,215 - INFO - Received voice request - Question: 심장박동수는 어떻게 되시나요?, Type: heartRate
+2025-01-14 17:30:47,215 - INFO - Audio file size: 56706 bytes
+2025-01-14 17:30:47,216 - INFO - Saved temporary file: temp_heartRate.wav
+2025-01-14 17:30:47,376 - INFO - Processing audio with duration 00:03.480
+2025-01-14 17:30:47,848 - INFO - Detected language 'ko' with probability 0.88
+2025-01-14 17:30:47,851 - INFO - 
+[temp_heartRate.wav] 처리 결과:
+2025-01-14 17:30:47,851 - INFO - 파일 처리 시간: 0.64초
+2025-01-14 17:30:47,852 - INFO - 감지된 언어: ko (확률: 0.88)
+2025-01-14 17:30:48,427 - INFO - [0.00s -> 3.00s]  120 지금 되지 않나요 요즘에 120
+2025-01-14 17:30:48,427 - INFO - Extracted text: 120 지금 되지 않나요 요즘에 120
+2025-01-14 17:30:48,428 - INFO - Processing answer - Type: heartRate, Context: 120 지금 되지 않나요 요즘에 120
+2025-01-14 17:30:48,428 - INFO - Extracted number for heartRate: 120
+2025-01-14 17:30:48,428 - INFO - Processed answer: 120
+2025-01-14 17:30:48,429 - INFO - Removed temporary file: temp_heartRate.wav
+2025-01-14 17:30:57,776 - INFO - Received voice request - Question: 평소에 걷기 운동을 얼마나 하시나요?, Type: walking
+2025-01-14 17:30:57,777 - INFO - Audio file size: 80976 bytes
+2025-01-14 17:30:57,778 - INFO - Saved temporary file: temp_walking.wav
+2025-01-14 17:30:57,943 - INFO - Processing audio with duration 00:04.980
+2025-01-14 17:30:58,441 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:30:58,444 - INFO - 
+[temp_walking.wav] 처리 결과:
+2025-01-14 17:30:58,444 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:30:58,445 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:30:59,165 - INFO - [0.00s -> 4.96s]  제가 꽤 많이 걷죠, 걷기 운동.
+2025-01-14 17:30:59,165 - INFO - Extracted text: 제가 꽤 많이 걷죠, 걷기 운동.
+2025-01-14 17:30:59,166 - INFO - Processing answer - Type: walking, Context: 제가 꽤 많이 걷죠, 걷기 운동.
+2025-01-14 17:30:59,166 - INFO - Extracted walking level: 8000
+2025-01-14 17:30:59,166 - INFO - Processed answer: 8000
+2025-01-14 17:30:59,167 - INFO - Removed temporary file: temp_walking.wav
+2025-01-14 17:31:06,877 - INFO - Received voice request - Question: 콜레스테롤이 높다고 들어보셨나요?, Type: cholesterol
+2025-01-14 17:31:06,878 - INFO - Audio file size: 91783 bytes
+2025-01-14 17:31:06,879 - INFO - Saved temporary file: temp_cholesterol.wav
+2025-01-14 17:31:07,040 - INFO - Processing audio with duration 00:05.640
+2025-01-14 17:31:07,623 - INFO - Detected language 'ko' with probability 0.86
+2025-01-14 17:31:07,625 - INFO - 
+[temp_cholesterol.wav] 처리 결과:
+2025-01-14 17:31:07,626 - INFO - 파일 처리 시간: 0.75초
+2025-01-14 17:31:07,626 - INFO - 감지된 언어: ko (확률: 0.86)
+2025-01-14 17:31:08,170 - INFO - [0.00s -> 4.94s]  네 좀 높다고 들어봤어요
+2025-01-14 17:31:08,170 - INFO - Extracted text: 네 좀 높다고 들어봤어요
+2025-01-14 17:31:08,171 - INFO - Processing answer - Type: cholesterol, Context: 네 좀 높다고 들어봤어요
+2025-01-14 17:31:08,171 - INFO - Extracted yes/no for cholesterol: 예
+2025-01-14 17:31:08,172 - INFO - Processed answer: 예
+2025-01-14 17:31:08,172 - INFO - Removed temporary file: temp_cholesterol.wav
+2025-01-14 17:38:35,493 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:38:38,818 - INFO - 모델 로딩 완료 (소요 시간: 5.13초)
+2025-01-14 17:39:07,119 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:39:07,120 - INFO - Audio file size: 98568 bytes
+2025-01-14 17:39:07,121 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:39:07,288 - INFO - Processing audio with duration 00:06.060
+2025-01-14 17:39:08,283 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:39:08,285 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:39:08,286 - INFO - 파일 처리 시간: 1.16초
+2025-01-14 17:39:08,286 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:39:08,914 - INFO - [0.00s -> 3.84s]  이름은 김찬호
+2025-01-14 17:39:08,914 - INFO - Extracted text: 이름은 김찬호
+2025-01-14 17:39:08,914 - INFO - Processing answer - Type: name, Context: 이름은 김찬호
+2025-01-14 17:39:08,915 - INFO - Extracted name: 김찬호
+2025-01-14 17:39:08,916 - INFO - Processed answer: 김찬호
+2025-01-14 17:39:08,916 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:39:18,914 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:39:18,915 - INFO - Audio file size: 79189 bytes
+2025-01-14 17:39:18,916 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:39:19,081 - INFO - Processing audio with duration 00:04.860
+2025-01-14 17:39:19,661 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:39:19,663 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:39:19,663 - INFO - 파일 처리 시간: 0.75초
+2025-01-14 17:39:19,664 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:39:20,173 - INFO - [0.00s -> 2.96s]  나이는 스물여섯
+2025-01-14 17:39:20,173 - INFO - Extracted text: 나이는 스물여섯
+2025-01-14 17:39:20,173 - INFO - Processing answer - Type: age, Context: 나이는 스물여섯
+2025-01-14 17:39:20,174 - INFO - Extracted age: 2
+2025-01-14 17:39:20,175 - INFO - Processed answer: 2
+2025-01-14 17:39:20,175 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:45:15,493 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:45:19,217 - INFO - 모델 로딩 완료 (소요 시간: 5.63초)
+2025-01-14 17:45:45,689 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:45:45,691 - INFO - Audio file size: 82073 bytes
+2025-01-14 17:45:45,693 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:45:45,806 - INFO - Processing audio with duration 00:05.040
+2025-01-14 17:45:46,675 - INFO - Detected language 'ko' with probability 0.47
+2025-01-14 17:45:46,676 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:45:46,677 - INFO - 파일 처리 시간: 0.98초
+2025-01-14 17:45:46,677 - INFO - 감지된 언어: ko (확률: 0.47)
+2025-01-14 17:46:04,026 - INFO - [0.00s -> 1.12s]  demonstrative
+2025-01-14 17:46:04,027 - INFO - [3.28s -> 5.28s]  이중은 done
+2025-01-14 17:46:04,027 - INFO - Extracted text: demonstrative  이중은 done
+2025-01-14 17:46:04,027 - INFO - Processing answer - Type: name, Context: demonstrative  이중은 done
+2025-01-14 17:46:04,845 - ERROR - Error processing answer: cannot unpack non-iterable float object
+2025-01-14 17:46:04,846 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:46:16,078 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:46:16,078 - INFO - Audio file size: 79827 bytes
+2025-01-14 17:46:16,079 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:46:16,253 - INFO - Processing audio with duration 00:04.920
+2025-01-14 17:46:16,843 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:46:16,845 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:46:16,846 - INFO - 파일 처리 시간: 0.77초
+2025-01-14 17:46:16,846 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:46:17,365 - INFO - [0.00s -> 4.90s]  내 이름은 김찬호.
+2025-01-14 17:46:17,365 - INFO - Extracted text: 내 이름은 김찬호.
+2025-01-14 17:46:17,366 - INFO - Processing answer - Type: name, Context: 내 이름은 김찬호.
+2025-01-14 17:46:17,367 - INFO - Extracted name: 김찬호
+2025-01-14 17:46:17,367 - INFO - Processed answer: 김찬호
+2025-01-14 17:46:17,368 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:46:33,776 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:46:33,776 - INFO - Audio file size: 101497 bytes
+2025-01-14 17:46:33,777 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:46:33,879 - INFO - Processing audio with duration 00:06.240
+2025-01-14 17:46:34,436 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:46:34,437 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:46:34,438 - INFO - 파일 처리 시간: 0.66초
+2025-01-14 17:46:34,438 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:46:34,905 - INFO - [0.00s -> 6.24s]  나이는 65살
+2025-01-14 17:46:34,905 - INFO - Extracted text: 나이는 65살
+2025-01-14 17:46:34,906 - INFO - Processing answer - Type: age, Context: 나이는 65살
+2025-01-14 17:46:34,906 - ERROR - Error in Kiwi age analysis: cannot unpack non-iterable float object
+2025-01-14 17:46:34,906 - ERROR - Error processing answer: 'super' object has no attribute 'extract_number'
+2025-01-14 17:46:34,906 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:49:25,484 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:49:29,162 - INFO - 모델 로딩 완료 (소요 시간: 5.48초)
+2025-01-14 17:49:48,637 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:49:48,638 - INFO - Audio file size: 62565 bytes
+2025-01-14 17:49:48,639 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:49:48,799 - INFO - Processing audio with duration 00:03.840
+2025-01-14 17:49:49,880 - INFO - Detected language 'ko' with probability 0.85
+2025-01-14 17:49:49,882 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:49:49,883 - INFO - 파일 처리 시간: 1.24초
+2025-01-14 17:49:49,883 - INFO - 감지된 언어: ko (확률: 0.85)
+2025-01-14 17:49:50,401 - INFO - [0.00s -> 3.84s]  이름은 김찬호
+2025-01-14 17:49:50,402 - INFO - Extracted text: 이름은 김찬호
+2025-01-14 17:49:50,402 - INFO - Processing answer - Type: name, Context: 이름은 김찬호
+2025-01-14 17:49:50,403 - INFO - Extracted name: 김찬호
+2025-01-14 17:49:50,404 - INFO - Processed answer: 김찬호
+2025-01-14 17:49:50,404 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:49:58,700 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:49:58,701 - INFO - Audio file size: 77162 bytes
+2025-01-14 17:49:58,702 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:49:58,867 - INFO - Processing audio with duration 00:04.740
+2025-01-14 17:49:59,466 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:49:59,467 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:49:59,468 - INFO - 파일 처리 시간: 0.77초
+2025-01-14 17:49:59,468 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:49:59,962 - INFO - [0.00s -> 4.72s]  나이는 65 나이는 65
+2025-01-14 17:49:59,962 - INFO - Extracted text: 나이는 65 나이는 65
+2025-01-14 17:49:59,963 - INFO - Processing answer - Type: age, Context: 나이는 65 나이는 65
+2025-01-14 17:50:01,537 - INFO - Extracted age: 65
+2025-01-14 17:50:01,538 - INFO - Processed answer: 65
+2025-01-14 17:50:01,539 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:50:08,304 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-14 17:50:08,304 - INFO - Audio file size: 47917 bytes
+2025-01-14 17:50:08,305 - INFO - Saved temporary file: temp_sex.wav
+2025-01-14 17:50:08,461 - INFO - Processing audio with duration 00:02.940
+2025-01-14 17:50:09,064 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:50:09,066 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-14 17:50:09,066 - INFO - 파일 처리 시간: 0.76초
+2025-01-14 17:50:09,067 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:50:09,613 - INFO - [0.00s -> 2.94s]  성별은 남자 성별은 남자
+2025-01-14 17:50:09,614 - INFO - Extracted text: 성별은 남자 성별은 남자
+2025-01-14 17:50:09,614 - INFO - Processing answer - Type: sex, Context: 성별은 남자 성별은 남자
+2025-01-14 17:50:09,615 - INFO - Processed answer: 남자
+2025-01-14 17:50:09,615 - INFO - Removed temporary file: temp_sex.wav
+2025-01-14 17:50:13,883 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 17:50:13,883 - INFO - Audio file size: 48026 bytes
+2025-01-14 17:50:13,884 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 17:50:14,033 - INFO - Processing audio with duration 00:02.940
+2025-01-14 17:50:14,635 - INFO - Detected language 'nn' with probability 0.64
+2025-01-14 17:50:14,637 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 17:50:14,638 - INFO - 파일 처리 시간: 0.75초
+2025-01-14 17:50:14,638 - INFO - 감지된 언어: nn (확률: 0.64)
+2025-01-14 17:50:15,395 - INFO - [0.00s -> 2.00s]  Hubsan x4 H502E Desire 2-3-18
+2025-01-14 17:50:15,395 - INFO - Extracted text: Hubsan x4 H502E Desire 2-3-18
+2025-01-14 17:50:15,395 - INFO - Processing answer - Type: weight, Context: Hubsan x4 H502E Desire 2-3-18
+2025-01-14 17:50:15,396 - INFO - Extracted number for weight: 4
+2025-01-14 17:50:15,396 - INFO - Processed answer: 4
+2025-01-14 17:50:15,397 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 17:50:26,688 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 17:50:26,688 - INFO - Audio file size: 72323 bytes
+2025-01-14 17:50:26,689 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 17:50:26,847 - INFO - Processing audio with duration 00:04.440
+2025-01-14 17:50:27,468 - INFO - Detected language 'ko' with probability 0.97
+2025-01-14 17:50:27,470 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 17:50:27,470 - INFO - 파일 처리 시간: 0.78초
+2025-01-14 17:50:27,471 - INFO - 감지된 언어: ko (확률: 0.97)
+2025-01-14 17:50:28,104 - INFO - [0.00s -> 4.44s]  몸무게는 70 몸무게는 70
+2025-01-14 17:50:28,105 - INFO - Extracted text: 몸무게는 70 몸무게는 70
+2025-01-14 17:50:28,105 - INFO - Processing answer - Type: weight, Context: 몸무게는 70 몸무게는 70
+2025-01-14 17:50:28,106 - INFO - Extracted number for weight: 70
+2025-01-14 17:50:28,107 - INFO - Processed answer: 70
+2025-01-14 17:50:28,107 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 17:50:36,144 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 17:50:36,145 - INFO - Audio file size: 63544 bytes
+2025-01-14 17:50:36,146 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 17:50:36,303 - INFO - Processing audio with duration 00:03.900
+2025-01-14 17:50:36,870 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:50:36,872 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 17:50:36,873 - INFO - 파일 처리 시간: 0.73초
+2025-01-14 17:50:36,873 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:50:37,467 - INFO - [0.00s -> 3.90s]  키는 백 팔십 키는 백 팔십
+2025-01-14 17:50:37,467 - INFO - Extracted text: 키는 백 팔십 키는 백 팔십
+2025-01-14 17:50:37,468 - INFO - Processing answer - Type: height, Context: 키는 백 팔십 키는 백 팔십
+2025-01-14 17:50:37,469 - ERROR - Error in general number conversion: 'KoreanQAProcessor' object has no attribute 'korean_numbers'
+2025-01-14 17:50:37,469 - INFO - Extracted number for height: None
+2025-01-14 17:50:37,470 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 17:50:56,036 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 17:50:56,036 - INFO - Audio file size: 57824 bytes
+2025-01-14 17:50:56,037 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 17:50:56,135 - INFO - Processing audio with duration 00:03.540
+2025-01-14 17:50:56,662 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:50:56,664 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 17:50:56,664 - INFO - 파일 처리 시간: 0.63초
+2025-01-14 17:50:56,665 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:50:57,131 - INFO - [0.00s -> 3.54s]  키는 180cm
+2025-01-14 17:50:57,132 - INFO - Extracted text: 키는 180cm
+2025-01-14 17:50:57,132 - INFO - Processing answer - Type: height, Context: 키는 180cm
+2025-01-14 17:50:57,133 - INFO - Extracted number for height: 180
+2025-01-14 17:50:57,133 - INFO - Processed answer: 180
+2025-01-14 17:50:57,134 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 17:51:20,216 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 17:51:20,216 - INFO - Audio file size: 68501 bytes
+2025-01-14 17:51:20,217 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 17:51:20,375 - INFO - Processing audio with duration 00:04.200
+2025-01-14 17:51:20,863 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:51:20,865 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 17:51:20,865 - INFO - 파일 처리 시간: 0.65초
+2025-01-14 17:51:20,866 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:51:21,698 - INFO - [0.00s -> 4.18s]  하루에 여덟 시간 정도 잔다 하루에 여덟 시간 정도 잔다
+2025-01-14 17:51:21,699 - INFO - Extracted text: 하루에 여덟 시간 정도 잔다 하루에 여덟 시간 정도 잔다
+2025-01-14 17:51:21,699 - INFO - Processing answer - Type: sleepTime, Context: 하루에 여덟 시간 정도 잔다 하루에 여덟 시간 정도 잔다
+2025-01-14 17:51:21,701 - ERROR - Error in general number conversion: 'KoreanQAProcessor' object has no attribute 'korean_numbers'
+2025-01-14 17:51:21,701 - INFO - Extracted number for sleepTime: None
+2025-01-14 17:51:21,702 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 17:52:03,943 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 17:52:03,944 - INFO - Audio file size: 62693 bytes
+2025-01-14 17:52:03,945 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 17:52:04,049 - INFO - Processing audio with duration 00:03.840
+2025-01-14 17:52:04,641 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:52:04,644 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 17:52:04,645 - INFO - 파일 처리 시간: 0.70초
+2025-01-14 17:52:04,645 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:52:05,181 - INFO - [0.00s -> 3.84s]  여덟 시간 정도 삽니다
+2025-01-14 17:52:05,181 - INFO - Extracted text: 여덟 시간 정도 삽니다
+2025-01-14 17:52:05,182 - INFO - Processing answer - Type: sleepTime, Context: 여덟 시간 정도 삽니다
+2025-01-14 17:52:05,183 - ERROR - Error in general number conversion: 'KoreanQAProcessor' object has no attribute 'korean_numbers'
+2025-01-14 17:52:05,183 - INFO - Extracted number for sleepTime: None
+2025-01-14 17:52:05,184 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 17:55:03,987 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 17:55:07,898 - INFO - 모델 로딩 완료 (소요 시간: 5.71초)
+2025-01-14 17:55:30,953 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 17:55:30,955 - INFO - Audio file size: 52947 bytes
+2025-01-14 17:55:30,956 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 17:55:31,114 - INFO - Processing audio with duration 00:03.240
+2025-01-14 17:55:31,997 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:55:32,000 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 17:55:32,001 - INFO - 파일 처리 시간: 1.04초
+2025-01-14 17:55:32,001 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:55:32,623 - INFO - [0.00s -> 3.22s]  이름은 김찬호 이름은 김찬호
+2025-01-14 17:55:32,624 - INFO - Extracted text: 이름은 김찬호 이름은 김찬호
+2025-01-14 17:55:32,624 - INFO - Processing answer - Type: name, Context: 이름은 김찬호 이름은 김찬호
+2025-01-14 17:55:32,625 - INFO - Extracted name: 김찬호
+2025-01-14 17:55:32,625 - INFO - Processed answer: 김찬호
+2025-01-14 17:55:32,626 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 17:55:42,518 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:55:42,518 - INFO - Audio file size: 74170 bytes
+2025-01-14 17:55:42,520 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:55:42,677 - INFO - Processing audio with duration 00:04.560
+2025-01-14 17:55:43,189 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 17:55:43,191 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:55:43,192 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:55:43,193 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 17:55:43,697 - INFO - [0.00s -> 3.56s]  이름은 김찬호
+2025-01-14 17:55:43,697 - INFO - Extracted text: 이름은 김찬호
+2025-01-14 17:55:43,697 - INFO - Processing answer - Type: age, Context: 이름은 김찬호
+2025-01-14 17:55:43,698 - INFO - Extracted age: 2
+2025-01-14 17:55:43,698 - INFO - Processed answer: 2
+2025-01-14 17:55:43,699 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:55:56,811 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:55:56,811 - INFO - Audio file size: 84668 bytes
+2025-01-14 17:55:56,812 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:55:56,997 - INFO - Processing audio with duration 00:05.220
+2025-01-14 17:55:57,568 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 17:55:57,570 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:55:57,571 - INFO - 파일 처리 시간: 0.76초
+2025-01-14 17:55:57,571 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 17:55:58,240 - INFO - [0.00s -> 5.22s]  나이는 스물다섯 아니다 육십 오 세
+2025-01-14 17:55:58,241 - INFO - Extracted text: 나이는 스물다섯 아니다 육십 오 세
+2025-01-14 17:55:58,241 - INFO - Processing answer - Type: age, Context: 나이는 스물다섯 아니다 육십 오 세
+2025-01-14 17:55:58,241 - INFO - Extracted age: 2
+2025-01-14 17:55:58,242 - INFO - Processed answer: 2
+2025-01-14 17:55:58,243 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:56:07,882 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:56:07,883 - INFO - Audio file size: 85044 bytes
+2025-01-14 17:56:07,884 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:56:08,053 - INFO - Processing audio with duration 00:05.220
+2025-01-14 17:56:08,573 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:56:08,576 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:56:08,576 - INFO - 파일 처리 시간: 0.69초
+2025-01-14 17:56:08,576 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:56:09,204 - INFO - [0.00s -> 5.20s]  나이는 육십 오 세 쉰 다섯
+2025-01-14 17:56:09,206 - INFO - Extracted text: 나이는 육십 오 세 쉰 다섯
+2025-01-14 17:56:09,206 - INFO - Processing answer - Type: age, Context: 나이는 육십 오 세 쉰 다섯
+2025-01-14 17:56:09,206 - INFO - Extracted age: 2
+2025-01-14 17:56:09,206 - INFO - Processed answer: 2
+2025-01-14 17:56:09,208 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:56:19,538 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 17:56:19,539 - INFO - Audio file size: 70333 bytes
+2025-01-14 17:56:19,539 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 17:56:19,698 - INFO - Processing audio with duration 00:04.320
+2025-01-14 17:56:20,175 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 17:56:20,177 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 17:56:20,178 - INFO - 파일 처리 시간: 0.64초
+2025-01-14 17:56:20,178 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 17:56:20,655 - INFO - [0.00s -> 4.30s]  나이는 55
+2025-01-14 17:56:20,656 - INFO - Extracted text: 나이는 55
+2025-01-14 17:56:20,657 - INFO - Processing answer - Type: age, Context: 나이는 55
+2025-01-14 17:56:20,657 - INFO - Extracted age: 55
+2025-01-14 17:56:20,657 - INFO - Processed answer: 55
+2025-01-14 17:56:20,658 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 17:56:51,902 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-14 17:56:51,902 - INFO - Audio file size: 50920 bytes
+2025-01-14 17:56:51,904 - INFO - Saved temporary file: temp_sex.wav
+2025-01-14 17:56:52,010 - INFO - Processing audio with duration 00:03.120
+2025-01-14 17:56:52,575 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 17:56:52,578 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-14 17:56:52,578 - INFO - 파일 처리 시간: 0.67초
+2025-01-14 17:56:52,578 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 17:56:53,060 - INFO - [0.00s -> 3.12s]  남자올시다 남자
+2025-01-14 17:56:53,060 - INFO - Extracted text: 남자올시다 남자
+2025-01-14 17:56:53,061 - INFO - Processing answer - Type: sex, Context: 남자올시다 남자
+2025-01-14 17:56:53,061 - INFO - Processed answer: 남자
+2025-01-14 17:56:53,062 - INFO - Removed temporary file: temp_sex.wav
+2025-01-14 17:57:01,924 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 17:57:01,925 - INFO - Audio file size: 76270 bytes
+2025-01-14 17:57:01,925 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 17:57:02,086 - INFO - Processing audio with duration 00:04.680
+2025-01-14 17:57:02,560 - INFO - Detected language 'ko' with probability 0.95
+2025-01-14 17:57:02,562 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 17:57:02,562 - INFO - 파일 처리 시간: 0.64초
+2025-01-14 17:57:02,563 - INFO - 감지된 언어: ko (확률: 0.95)
+2025-01-14 17:57:03,222 - INFO - [0.00s -> 4.68s]  드디어 해본다 60킬로 60킬로
+2025-01-14 17:57:03,222 - INFO - Extracted text: 드디어 해본다 60킬로 60킬로
+2025-01-14 17:57:03,223 - INFO - Processing answer - Type: weight, Context: 드디어 해본다 60킬로 60킬로
+2025-01-14 17:57:03,223 - INFO - Extracted number for weight: 60
+2025-01-14 17:57:03,223 - INFO - Processed answer: 60
+2025-01-14 17:57:03,224 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 17:57:11,245 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 17:57:11,245 - INFO - Audio file size: 69352 bytes
+2025-01-14 17:57:11,246 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 17:57:11,412 - INFO - Processing audio with duration 00:04.260
+2025-01-14 17:57:11,938 - INFO - Detected language 'ko' with probability 0.93
+2025-01-14 17:57:11,941 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 17:57:11,941 - INFO - 파일 처리 시간: 0.69초
+2025-01-14 17:57:11,941 - INFO - 감지된 언어: ko (확률: 0.93)
+2025-01-14 17:57:12,394 - INFO - [0.00s -> 4.24s]  키는 180cm
+2025-01-14 17:57:12,394 - INFO - Extracted text: 키는 180cm
+2025-01-14 17:57:12,395 - INFO - Processing answer - Type: height, Context: 키는 180cm
+2025-01-14 17:57:12,395 - INFO - Extracted number for height: 180
+2025-01-14 17:57:12,396 - INFO - Processed answer: 180
+2025-01-14 17:57:12,396 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 17:57:22,575 - INFO - Received voice request - Question: 하루에 몇 시간 주무시나요?, Type: sleepTime
+2025-01-14 17:57:22,576 - INFO - Audio file size: 95566 bytes
+2025-01-14 17:57:22,577 - INFO - Saved temporary file: temp_sleepTime.wav
+2025-01-14 17:57:22,743 - INFO - Processing audio with duration 00:05.880
+2025-01-14 17:57:23,336 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:57:23,338 - INFO - 
+[temp_sleepTime.wav] 처리 결과:
+2025-01-14 17:57:23,338 - INFO - 파일 처리 시간: 0.76초
+2025-01-14 17:57:23,339 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:57:24,032 - INFO - [0.00s -> 5.88s]  하루에 여덟 시간 정도 잡니다 여덟 시간
+2025-01-14 17:57:24,032 - INFO - Extracted text: 하루에 여덟 시간 정도 잡니다 여덟 시간
+2025-01-14 17:57:24,033 - INFO - Processing answer - Type: sleepTime, Context: 하루에 여덟 시간 정도 잡니다 여덟 시간
+2025-01-14 17:57:24,033 - INFO - Extracted number for sleepTime: 8
+2025-01-14 17:57:24,034 - INFO - Processed answer: 8
+2025-01-14 17:57:24,034 - INFO - Removed temporary file: temp_sleepTime.wav
+2025-01-14 17:57:30,745 - INFO - Received voice request - Question: 술을 드시나요?, Type: drink
+2025-01-14 17:57:30,745 - INFO - Audio file size: 51974 bytes
+2025-01-14 17:57:30,746 - INFO - Saved temporary file: temp_drink.wav
+2025-01-14 17:57:30,900 - INFO - Processing audio with duration 00:03.180
+2025-01-14 17:57:31,545 - INFO - Detected language 'es' with probability 0.20
+2025-01-14 17:57:31,547 - INFO - 
+[temp_drink.wav] 처리 결과:
+2025-01-14 17:57:31,547 - INFO - 파일 처리 시간: 0.80초
+2025-01-14 17:57:31,547 - INFO - 감지된 언어: es (확률: 0.20)
+2025-01-14 17:57:32,069 - INFO - [0.00s -> 2.68s]  De de de de de de de
+2025-01-14 17:57:32,070 - INFO - Extracted text: De de de de de de de
+2025-01-14 17:57:32,070 - INFO - Processing answer - Type: drink, Context: De de de de de de de
+2025-01-14 17:57:32,070 - INFO - Extracted yes/no for drink: None
+2025-01-14 17:57:32,071 - INFO - Removed temporary file: temp_drink.wav
+2025-01-14 17:57:37,659 - INFO - Received voice request - Question: 술을 드시나요?, Type: drink
+2025-01-14 17:57:37,660 - INFO - Audio file size: 66422 bytes
+2025-01-14 17:57:37,661 - INFO - Saved temporary file: temp_drink.wav
+2025-01-14 17:57:37,827 - INFO - Processing audio with duration 00:04.080
+2025-01-14 17:57:38,322 - INFO - Detected language 'ko' with probability 0.95
+2025-01-14 17:57:38,324 - INFO - 
+[temp_drink.wav] 처리 결과:
+2025-01-14 17:57:38,324 - INFO - 파일 처리 시간: 0.66초
+2025-01-14 17:57:38,324 - INFO - 감지된 언어: ko (확률: 0.95)
+2025-01-14 17:57:38,799 - INFO - [0.00s -> 4.06s]  예예 술 먹습니다
+2025-01-14 17:57:38,799 - INFO - Extracted text: 예예 술 먹습니다
+2025-01-14 17:57:38,800 - INFO - Processing answer - Type: drink, Context: 예예 술 먹습니다
+2025-01-14 17:57:38,800 - INFO - Extracted yes/no for drink: 예
+2025-01-14 17:57:38,801 - INFO - Processed answer: 예
+2025-01-14 17:57:38,801 - INFO - Removed temporary file: temp_drink.wav
+2025-01-14 17:57:53,980 - INFO - Received voice request - Question: 평소에 걷기 운동을 얼마나 하시나요?, Type: walking
+2025-01-14 17:57:53,980 - INFO - Audio file size: 57718 bytes
+2025-01-14 17:57:53,981 - INFO - Saved temporary file: temp_walking.wav
+2025-01-14 17:57:54,142 - INFO - Processing audio with duration 00:03.540
+2025-01-14 17:57:54,724 - INFO - Detected language 'ko' with probability 1.00
+2025-01-14 17:57:54,726 - INFO - 
+[temp_walking.wav] 처리 결과:
+2025-01-14 17:57:54,727 - INFO - 파일 처리 시간: 0.74초
+2025-01-14 17:57:54,727 - INFO - 감지된 언어: ko (확률: 1.00)
+2025-01-14 17:57:55,237 - INFO - [0.00s -> 3.52s]  조금 걸어야 조금 걸어.
+2025-01-14 17:57:55,238 - INFO - Extracted text: 조금 걸어야 조금 걸어.
+2025-01-14 17:57:55,238 - INFO - Processing answer - Type: walking, Context: 조금 걸어야 조금 걸어.
+2025-01-14 17:57:55,238 - INFO - Extracted walking level: 5600
+2025-01-14 17:57:55,239 - INFO - Processed answer: 5600
+2025-01-14 17:57:55,240 - INFO - Removed temporary file: temp_walking.wav
+2025-01-14 18:02:17,170 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 18:02:20,640 - INFO - 모델 로딩 완료 (소요 시간: 4.09초)
+2025-01-14 18:02:48,931 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 18:02:48,932 - INFO - Audio file size: 90874 bytes
+2025-01-14 18:02:48,934 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 18:02:49,109 - INFO - Processing audio with duration 00:05.580
+2025-01-14 18:02:50,033 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 18:02:50,036 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 18:02:50,036 - INFO - 파일 처리 시간: 1.10초
+2025-01-14 18:02:50,037 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 18:02:51,239 - INFO - [0.00s -> 5.54s]  나는 김찬호 나는 김찬호
+2025-01-14 18:02:51,240 - INFO - [5.54s -> 7.54s]  김찬호
+2025-01-14 18:02:51,240 - INFO - Extracted text: 나는 김찬호 나는 김찬호  김찬호
+2025-01-14 18:02:51,240 - INFO - Processing name question with context: 나는 김찬호 나는 김찬호  김찬호
+2025-01-14 18:02:52,791 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-14 18:02:52,792 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 18:03:05,726 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 18:03:05,728 - INFO - Audio file size: 64516 bytes
+2025-01-14 18:03:05,729 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 18:03:05,837 - INFO - Processing audio with duration 00:03.960
+2025-01-14 18:03:06,404 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 18:03:06,406 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 18:03:06,406 - INFO - 파일 처리 시간: 0.68초
+2025-01-14 18:03:06,407 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 18:03:06,979 - INFO - [0.00s -> 3.96s]  나는 김찬호 나는 김찬호
+2025-01-14 18:03:06,979 - INFO - Extracted text: 나는 김찬호 나는 김찬호
+2025-01-14 18:03:06,980 - INFO - Processing name question with context: 나는 김찬호 나는 김찬호
+2025-01-14 18:03:06,981 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-14 18:03:06,981 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 18:04:46,113 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-14 18:04:49,844 - INFO - 모델 로딩 완료 (소요 시간: 5.54초)
+2025-01-14 18:05:04,246 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-14 18:05:04,248 - INFO - Audio file size: 48965 bytes
+2025-01-14 18:05:04,249 - INFO - Saved temporary file: temp_name.wav
+2025-01-14 18:05:04,428 - INFO - Processing audio with duration 00:03.000
+2025-01-14 18:05:05,494 - INFO - Detected language 'ko' with probability 0.99
+2025-01-14 18:05:05,497 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-14 18:05:05,497 - INFO - 파일 처리 시간: 1.25초
+2025-01-14 18:05:05,498 - INFO - 감지된 언어: ko (확률: 0.99)
+2025-01-14 18:05:06,121 - INFO - [0.00s -> 2.98s]  이름은 김찬호 이름은 김찬호
+2025-01-14 18:05:06,121 - INFO - Extracted text: 이름은 김찬호 이름은 김찬호
+2025-01-14 18:05:06,121 - INFO - Processing name question with context: 이름은 김찬호 이름은 김찬호
+2025-01-14 18:05:06,122 - INFO - Processed answer: 김찬호
+2025-01-14 18:05:06,122 - INFO - Removed temporary file: temp_name.wav
+2025-01-14 18:05:15,413 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-14 18:05:15,414 - INFO - Audio file size: 95539 bytes
+2025-01-14 18:05:15,415 - INFO - Saved temporary file: temp_age.wav
+2025-01-14 18:05:15,570 - INFO - Processing audio with duration 00:05.880
+2025-01-14 18:05:16,092 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 18:05:16,094 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-14 18:05:16,094 - INFO - 파일 처리 시간: 0.68초
+2025-01-14 18:05:16,094 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 18:05:16,546 - INFO - [0.00s -> 5.98s]  나이는 75
+2025-01-14 18:05:16,546 - INFO - Extracted text: 나이는 75
+2025-01-14 18:05:16,546 - INFO - Processing age question with context: 나이는 75
+2025-01-14 18:05:16,547 - INFO - Processed answer: 75
+2025-01-14 18:05:16,548 - INFO - Removed temporary file: temp_age.wav
+2025-01-14 18:05:23,109 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-14 18:05:23,109 - INFO - Audio file size: 44109 bytes
+2025-01-14 18:05:23,111 - INFO - Saved temporary file: temp_sex.wav
+2025-01-14 18:05:23,264 - INFO - Processing audio with duration 00:02.700
+2025-01-14 18:05:23,888 - INFO - Detected language 'ko' with probability 0.98
+2025-01-14 18:05:23,890 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-14 18:05:23,890 - INFO - 파일 처리 시간: 0.78초
+2025-01-14 18:05:23,891 - INFO - 감지된 언어: ko (확률: 0.98)
+2025-01-14 18:05:24,415 - INFO - [0.00s -> 2.70s]  남자, 남자, 남자요?
+2025-01-14 18:05:24,416 - INFO - Extracted text: 남자, 남자, 남자요?
+2025-01-14 18:05:24,416 - INFO - Processing sex question with context: 남자, 남자, 남자요?
+2025-01-14 18:05:24,417 - INFO - Processed answer: 남자
+2025-01-14 18:05:24,417 - INFO - Removed temporary file: temp_sex.wav
+2025-01-14 18:05:30,937 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-14 18:05:30,938 - INFO - Audio file size: 51973 bytes
+2025-01-14 18:05:30,939 - INFO - Saved temporary file: temp_weight.wav
+2025-01-14 18:05:31,091 - INFO - Processing audio with duration 00:03.180
+2025-01-14 18:05:31,682 - INFO - Detected language 'ko' with probability 0.90
+2025-01-14 18:05:31,684 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-14 18:05:31,685 - INFO - 파일 처리 시간: 0.74초
+2025-01-14 18:05:31,685 - INFO - 감지된 언어: ko (확률: 0.90)
+2025-01-14 18:05:32,138 - INFO - [0.00s -> 3.18s]  55kg
+2025-01-14 18:05:32,138 - INFO - Extracted text: 55kg
+2025-01-14 18:05:32,138 - INFO - Processing weight question with context: 55kg
+2025-01-14 18:05:32,139 - INFO - Processed answer: 55
+2025-01-14 18:05:32,139 - INFO - Removed temporary file: temp_weight.wav
+2025-01-14 18:05:40,296 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 18:05:40,297 - INFO - Audio file size: 72331 bytes
+2025-01-14 18:05:40,298 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 18:05:40,461 - INFO - Processing audio with duration 00:04.440
+2025-01-14 18:05:41,089 - INFO - Detected language 'ko' with probability 0.92
+2025-01-14 18:05:41,091 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 18:05:41,092 - INFO - 파일 처리 시간: 0.79초
+2025-01-14 18:05:41,092 - INFO - 감지된 언어: ko (확률: 0.92)
+2025-01-14 18:05:41,680 - INFO - [0.00s -> 4.44s]  백칠십팔 백칠십팔
+2025-01-14 18:05:41,680 - INFO - Extracted text: 백칠십팔 백칠십팔
+2025-01-14 18:05:41,680 - INFO - Processing height question with context: 백칠십팔 백칠십팔
+2025-01-14 18:05:41,681 - INFO - Processed answer: 108
+2025-01-14 18:05:41,681 - INFO - Removed temporary file: temp_height.wav
+2025-01-14 18:05:50,616 - INFO - Received voice request - Question: 키는 몇 cm이신가요?, Type: height
+2025-01-14 18:05:50,616 - INFO - Audio file size: 58721 bytes
+2025-01-14 18:05:50,616 - INFO - Saved temporary file: temp_height.wav
+2025-01-14 18:05:50,769 - INFO - Processing audio with duration 00:03.600
+2025-01-14 18:05:51,280 - INFO - Detected language 'ko' with probability 0.96
+2025-01-14 18:05:51,282 - INFO - 
+[temp_height.wav] 처리 결과:
+2025-01-14 18:05:51,283 - INFO - 파일 처리 시간: 0.66초
+2025-01-14 18:05:51,283 - INFO - 감지된 언어: ko (확률: 0.96)
+2025-01-14 18:05:51,893 - INFO - [0.00s -> 3.58s]  백 칠십 팔 백 칠십 팔
+2025-01-14 18:05:51,894 - INFO - Extracted text: 백 칠십 팔 백 칠십 팔
+2025-01-14 18:05:51,894 - INFO - Processing height question with context: 백 칠십 팔 백 칠십 팔
+2025-01-14 18:05:51,895 - INFO - Processed answer: 100
+2025-01-14 18:05:51,895 - INFO - Removed temporary file: temp_height.wav
+2025-01-15 11:24:00,194 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:24:03,729 - INFO - 모델 로딩 완료 (소요 시간: 5.34초)
+2025-01-15 11:25:53,996 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:25:53,997 - INFO - Audio file size: 27632 bytes
+2025-01-15 11:25:53,998 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:25:54,199 - INFO - Processing audio with duration 00:01.680
+2025-01-15 11:25:54,216 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:25:54,217 - INFO - 파일 처리 시간: 0.22초
+2025-01-15 11:25:54,217 - INFO - 언어: 한국어
+2025-01-15 11:25:55,546 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:26:00,770 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:26:00,771 - INFO - Audio file size: 60331 bytes
+2025-01-15 11:26:00,771 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:26:00,938 - INFO - Processing audio with duration 00:03.720
+2025-01-15 11:26:00,947 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:26:00,948 - INFO - 파일 처리 시간: 0.18초
+2025-01-15 11:26:00,948 - INFO - 언어: 한국어
+2025-01-15 11:26:12,135 - INFO - [0.00s -> 2.00s]  안녕하세요 여러분
+2025-01-15 11:26:12,135 - INFO - [2.00s -> 4.00s]  오늘은
+2025-01-15 11:26:12,135 - INFO - [4.00s -> 6.00s]  제주도에서
+2025-01-15 11:26:12,135 - INFO - [6.00s -> 8.00s]  제가
+2025-01-15 11:26:12,136 - INFO - [8.00s -> 10.00s]  제일 좋아하는
+2025-01-15 11:26:12,136 - INFO - [10.00s -> 12.00s]  주제는
+2025-01-15 11:26:12,136 - INFO - [12.00s -> 14.00s]  주제는
+2025-01-15 11:26:12,136 - INFO - [14.00s -> 16.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [16.00s -> 18.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [18.00s -> 20.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [20.00s -> 22.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [22.00s -> 24.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [24.00s -> 26.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [26.00s -> 28.00s]  지하철
+2025-01-15 11:26:12,138 - INFO - Extracted text: 안녕하세요 여러분  오늘은  제주도에서  제가  제일 좋아하는  주제는  주제는  지하철  지하철  지하철  지하철  지하철  지하철  지하철
+2025-01-15 11:26:12,138 - INFO - Processing answer - Type: name, Context: 안녕하세요 여러분  오늘은  제주도에서  제가  제일 좋아하는  주제는  주제는  지하철  지하철  지하철  지하철  지하철  지하철  지하철
+2025-01-15 11:26:13,029 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-15 11:26:13,030 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:26:13,032 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:26:13,032 - INFO - Audio file size: 15685 bytes
+2025-01-15 11:26:13,033 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:26:13,113 - INFO - Processing audio with duration 00:00.960
+2025-01-15 11:26:13,116 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:26:13,117 - INFO - 파일 처리 시간: 0.08초
+2025-01-15 11:26:13,117 - INFO - 언어: 한국어
+2025-01-15 11:26:13,517 - INFO - [0.00s -> 0.96s]  감사합니다.
+2025-01-15 11:26:13,517 - INFO - Extracted text: 감사합니다.
+2025-01-15 11:26:13,517 - INFO - Processing answer - Type: name, Context: 감사합니다.
+2025-01-15 11:26:13,518 - ERROR - Error processing answer: cannot unpack non-iterable float object
+2025-01-15 11:26:13,518 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:33:35,951 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:33:40,182 - INFO - 모델 로딩 완료 (소요 시간: 6.05초)
+2025-01-15 11:34:42,154 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:34:42,154 - INFO - Audio file size: 21507 bytes
+2025-01-15 11:34:42,156 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:34:42,310 - INFO - Processing audio with duration 00:01.320
+2025-01-15 11:34:42,315 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:34:42,315 - INFO - 파일 처리 시간: 0.16초
+2025-01-15 11:34:42,315 - INFO - 언어: 한국어
+2025-01-15 11:34:43,732 - INFO - [0.00s -> 1.30s]  자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:43,732 - INFO - Extracted text: 자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:43,732 - INFO - Processing answer - Type: name, Context: 자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:45,296 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-15 11:34:45,296 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:43:46,179 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:43:50,072 - INFO - 모델 로딩 완료 (소요 시간: 5.72초)
