@@ -978,3 +978,70 @@
 2025-01-14 18:05:51,894 - INFO - Processing height question with context: 백 칠십 팔 백 칠십 팔
 2025-01-14 18:05:51,895 - INFO - Processed answer: 100
 2025-01-14 18:05:51,895 - INFO - Removed temporary file: temp_height.wav
+2025-01-15 11:24:00,194 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:24:03,729 - INFO - 모델 로딩 완료 (소요 시간: 5.34초)
+2025-01-15 11:25:53,996 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:25:53,997 - INFO - Audio file size: 27632 bytes
+2025-01-15 11:25:53,998 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:25:54,199 - INFO - Processing audio with duration 00:01.680
+2025-01-15 11:25:54,216 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:25:54,217 - INFO - 파일 처리 시간: 0.22초
+2025-01-15 11:25:54,217 - INFO - 언어: 한국어
+2025-01-15 11:25:55,546 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:26:00,770 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:26:00,771 - INFO - Audio file size: 60331 bytes
+2025-01-15 11:26:00,771 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:26:00,938 - INFO - Processing audio with duration 00:03.720
+2025-01-15 11:26:00,947 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:26:00,948 - INFO - 파일 처리 시간: 0.18초
+2025-01-15 11:26:00,948 - INFO - 언어: 한국어
+2025-01-15 11:26:12,135 - INFO - [0.00s -> 2.00s]  안녕하세요 여러분
+2025-01-15 11:26:12,135 - INFO - [2.00s -> 4.00s]  오늘은
+2025-01-15 11:26:12,135 - INFO - [4.00s -> 6.00s]  제주도에서
+2025-01-15 11:26:12,135 - INFO - [6.00s -> 8.00s]  제가
+2025-01-15 11:26:12,136 - INFO - [8.00s -> 10.00s]  제일 좋아하는
+2025-01-15 11:26:12,136 - INFO - [10.00s -> 12.00s]  주제는
+2025-01-15 11:26:12,136 - INFO - [12.00s -> 14.00s]  주제는
+2025-01-15 11:26:12,136 - INFO - [14.00s -> 16.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [16.00s -> 18.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [18.00s -> 20.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [20.00s -> 22.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [22.00s -> 24.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [24.00s -> 26.00s]  지하철
+2025-01-15 11:26:12,137 - INFO - [26.00s -> 28.00s]  지하철
+2025-01-15 11:26:12,138 - INFO - Extracted text: 안녕하세요 여러분  오늘은  제주도에서  제가  제일 좋아하는  주제는  주제는  지하철  지하철  지하철  지하철  지하철  지하철  지하철
+2025-01-15 11:26:12,138 - INFO - Processing answer - Type: name, Context: 안녕하세요 여러분  오늘은  제주도에서  제가  제일 좋아하는  주제는  주제는  지하철  지하철  지하철  지하철  지하철  지하철  지하철
+2025-01-15 11:26:13,029 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-15 11:26:13,030 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:26:13,032 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:26:13,032 - INFO - Audio file size: 15685 bytes
+2025-01-15 11:26:13,033 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:26:13,113 - INFO - Processing audio with duration 00:00.960
+2025-01-15 11:26:13,116 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:26:13,117 - INFO - 파일 처리 시간: 0.08초
+2025-01-15 11:26:13,117 - INFO - 언어: 한국어
+2025-01-15 11:26:13,517 - INFO - [0.00s -> 0.96s]  감사합니다.
+2025-01-15 11:26:13,517 - INFO - Extracted text: 감사합니다.
+2025-01-15 11:26:13,517 - INFO - Processing answer - Type: name, Context: 감사합니다.
+2025-01-15 11:26:13,518 - ERROR - Error processing answer: cannot unpack non-iterable float object
+2025-01-15 11:26:13,518 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:33:35,951 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:33:40,182 - INFO - 모델 로딩 완료 (소요 시간: 6.05초)
+2025-01-15 11:34:42,154 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-15 11:34:42,154 - INFO - Audio file size: 21507 bytes
+2025-01-15 11:34:42,156 - INFO - Saved temporary file: temp_name.wav
+2025-01-15 11:34:42,310 - INFO - Processing audio with duration 00:01.320
+2025-01-15 11:34:42,315 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-15 11:34:42,315 - INFO - 파일 처리 시간: 0.16초
+2025-01-15 11:34:42,315 - INFO - 언어: 한국어
+2025-01-15 11:34:43,732 - INFO - [0.00s -> 1.30s]  자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:43,732 - INFO - Extracted text: 자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:43,732 - INFO - Processing answer - Type: name, Context: 자막은 설정에서 선택하실 수 있습니다.
+2025-01-15 11:34:45,296 - ERROR - Error processing answer: too many values to unpack (expected 4)
+2025-01-15 11:34:45,296 - INFO - Removed temporary file: temp_name.wav
+2025-01-15 11:43:46,179 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-15 11:43:50,072 - INFO - 모델 로딩 완료 (소요 시간: 5.72초)

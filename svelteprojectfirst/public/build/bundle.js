@@ -772,11 +772,11 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[30] = list[i];
+    	child_ctx[31] = list[i];
     	return child_ctx;
     }
 
-    // (284:22) {#if showingCursor}
+    // (299:22) {#if showingCursor}
     function create_if_block_5(ctx) {
     	let span;
 
@@ -784,8 +784,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "_";
-    			attr_dev(span, "class", "cursor svelte-j8hh3a");
-    			add_location(span, file$2, 283, 41, 8901);
+    			attr_dev(span, "class", "cursor svelte-17mial3");
+    			add_location(span, file$2, 298, 41, 9264);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -799,14 +799,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(284:22) {#if showingCursor}",
+    		source: "(299:22) {#if showingCursor}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:3) {#if errorMessage}
+    // (302:3) {#if errorMessage}
     function create_if_block_4(ctx) {
     	let p;
     	let t;
@@ -815,8 +815,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMessage*/ ctx[4]);
-    			attr_dev(p, "class", "error svelte-j8hh3a");
-    			add_location(p, file$2, 287, 5, 8986);
+    			attr_dev(p, "class", "error svelte-17mial3");
+    			add_location(p, file$2, 302, 5, 9349);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -834,14 +834,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(287:3) {#if errorMessage}",
+    		source: "(302:3) {#if errorMessage}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (330:3) {:else}
+    // (345:3) {:else}
     function create_else_block(ctx) {
     	let input;
     	let input_step_value;
@@ -855,8 +855,8 @@ var app = (function () {
     			input = element("input");
     			attr_dev(input, "step", input_step_value = /*steps*/ ctx[7][/*currentStep*/ ctx[0]].step);
     			input.required = input_required_value = /*steps*/ ctx[7][/*currentStep*/ ctx[0]].required;
-    			attr_dev(input, "class", "svelte-j8hh3a");
-    			add_location(input, file$2, 330, 5, 10334);
+    			attr_dev(input, "class", "svelte-17mial3");
+    			add_location(input, file$2, 345, 5, 10697);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input, anchor);
@@ -898,14 +898,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(330:3) {:else}",
+    		source: "(345:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (309:53) 
+    // (324:53) 
     function create_if_block_3(ctx) {
     	let div;
     	let label0;
@@ -932,18 +932,18 @@ var app = (function () {
     			input1 = element("input");
     			attr_dev(input0, "type", "number");
     			input0.required = input0_required_value = /*steps*/ ctx[7][/*currentStep*/ ctx[0]].required;
-    			attr_dev(input0, "class", "svelte-j8hh3a");
-    			add_location(input0, file$2, 312, 9, 9832);
-    			attr_dev(label0, "class", "svelte-j8hh3a");
-    			add_location(label0, file$2, 310, 7, 9796);
+    			attr_dev(input0, "class", "svelte-17mial3");
+    			add_location(input0, file$2, 327, 9, 10195);
+    			attr_dev(label0, "class", "svelte-17mial3");
+    			add_location(label0, file$2, 325, 7, 10159);
     			attr_dev(input1, "type", "number");
     			input1.required = input1_required_value = /*steps*/ ctx[7][/*currentStep*/ ctx[0]].required;
-    			attr_dev(input1, "class", "svelte-j8hh3a");
-    			add_location(input1, file$2, 321, 9, 10089);
-    			attr_dev(label1, "class", "svelte-j8hh3a");
-    			add_location(label1, file$2, 319, 7, 10053);
-    			attr_dev(div, "class", "input-group svelte-j8hh3a");
-    			add_location(div, file$2, 309, 5, 9762);
+    			attr_dev(input1, "class", "svelte-17mial3");
+    			add_location(input1, file$2, 336, 9, 10452);
+    			attr_dev(label1, "class", "svelte-17mial3");
+    			add_location(label1, file$2, 334, 7, 10416);
+    			attr_dev(div, "class", "input-group svelte-17mial3");
+    			add_location(div, file$2, 324, 5, 10125);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -996,14 +996,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(309:53) ",
+    		source: "(324:53) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:3) {#if steps[currentStep].type === 'select'}
+    // (306:3) {#if steps[currentStep].type === 'select'}
     function create_if_block_2$1(ctx) {
     	let div;
     	let each_value = /*steps*/ ctx[7][/*currentStep*/ ctx[0]].options;
@@ -1022,8 +1022,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "button-group svelte-j8hh3a");
-    			add_location(div, file$2, 291, 5, 9090);
+    			attr_dev(div, "class", "button-group svelte-17mial3");
+    			add_location(div, file$2, 306, 5, 9453);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1069,24 +1069,24 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(291:3) {#if steps[currentStep].type === 'select'}",
+    		source: "(306:3) {#if steps[currentStep].type === 'select'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (293:7) {#each steps[currentStep].options as option}
+    // (308:7) {#each steps[currentStep].options as option}
     function create_each_block$1(ctx) {
     	let button;
-    	let t0_value = /*option*/ ctx[30] + "";
+    	let t0_value = /*option*/ ctx[31] + "";
     	let t0;
     	let t1;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[14](/*option*/ ctx[30]);
+    		return /*click_handler*/ ctx[14](/*option*/ ctx[31]);
     	}
 
     	const block = {
@@ -1094,7 +1094,7 @@ var app = (function () {
     			button = element("button");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(button, "class", "svelte-j8hh3a");
+    			attr_dev(button, "class", "svelte-17mial3");
 
     			toggle_class(button, "selected", /*userInfo*/ ctx[1][/*steps*/ ctx[7][/*currentStep*/ ctx[0]].field] === (/*steps*/ ctx[7][/*currentStep*/ ctx[0]].field === 'walking'
     			? Object.values({
@@ -1103,10 +1103,10 @@ var app = (function () {
     					'보통 걷는다': 7000,
     					'조금 걷는다': 5600,
     					'거의 걷지 않는다': 3000
-    				})[/*steps*/ ctx[7][/*currentStep*/ ctx[0]].options.indexOf(/*option*/ ctx[30])]
-    			: /*option*/ ctx[30]));
+    				})[/*steps*/ ctx[7][/*currentStep*/ ctx[0]].options.indexOf(/*option*/ ctx[31])]
+    			: /*option*/ ctx[31]));
 
-    			add_location(button, file$2, 293, 9, 9180);
+    			add_location(button, file$2, 308, 9, 9543);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1120,7 +1120,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*currentStep*/ 1 && t0_value !== (t0_value = /*option*/ ctx[30] + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*currentStep*/ 1 && t0_value !== (t0_value = /*option*/ ctx[31] + "")) set_data_dev(t0, t0_value);
 
     			if (dirty[0] & /*userInfo, steps, currentStep*/ 131) {
     				toggle_class(button, "selected", /*userInfo*/ ctx[1][/*steps*/ ctx[7][/*currentStep*/ ctx[0]].field] === (/*steps*/ ctx[7][/*currentStep*/ ctx[0]].field === 'walking'
@@ -1130,8 +1130,8 @@ var app = (function () {
     						'보통 걷는다': 7000,
     						'조금 걷는다': 5600,
     						'거의 걷지 않는다': 3000
-    					})[/*steps*/ ctx[7][/*currentStep*/ ctx[0]].options.indexOf(/*option*/ ctx[30])]
-    				: /*option*/ ctx[30]));
+    					})[/*steps*/ ctx[7][/*currentStep*/ ctx[0]].options.indexOf(/*option*/ ctx[31])]
+    				: /*option*/ ctx[31]));
     			}
     		},
     		d: function destroy(detaching) {
@@ -1145,14 +1145,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(293:7) {#each steps[currentStep].options as option}",
+    		source: "(308:7) {#each steps[currentStep].options as option}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (341:3) {#if recordingStatus}
+    // (357:4) {#if recordingStatus}
     function create_if_block_1$1(ctx) {
     	let div;
     	let t;
@@ -1161,8 +1161,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*recordingStatus*/ ctx[6]);
-    			attr_dev(div, "class", "recording-status svelte-j8hh3a");
-    			add_location(div, file$2, 341, 4, 10640);
+    			attr_dev(div, "class", "recording-status svelte-17mial3");
+    			add_location(div, file$2, 357, 5, 11046);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1180,14 +1180,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(341:3) {#if recordingStatus}",
+    		source: "(357:4) {#if recordingStatus}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (358:5) {#if !steps[currentStep].required}
+    // (374:5) {#if !steps[currentStep].required}
     function create_if_block$1(ctx) {
     	let button;
     	let mounted;
@@ -1197,8 +1197,8 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "건너뛰기";
-    			attr_dev(button, "class", "svelte-j8hh3a");
-    			add_location(button, file$2, 358, 7, 11050);
+    			attr_dev(button, "class", "svelte-17mial3");
+    			add_location(button, file$2, 374, 7, 11507);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1220,7 +1220,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(358:5) {#if !steps[currentStep].required}",
+    		source: "(374:5) {#if !steps[currentStep].required}",
     		ctx
     	});
 
@@ -1228,8 +1228,8 @@ var app = (function () {
     }
 
     function create_fragment$2(ctx) {
+    	let div4;
     	let div3;
-    	let div2;
     	let div0;
     	let h2;
     	let t0;
@@ -1237,22 +1237,29 @@ var app = (function () {
     	let t2;
     	let show_if;
     	let t3;
+    	let div1;
     	let t4;
     	let button0;
-    	let t5_value = (/*isRecording*/ ctx[5] ? '녹음 중지' : '음성으로 답변하기') + "";
-    	let t5;
+    	let span;
     	let t6;
-    	let div1;
-    	let button1;
+
+    	let t7_value = (/*isRecording*/ ctx[5]
+    	? '녹음 중지하기 (Space)'
+    	: '음성으로 답변하기 (Space)') + "";
+
+    	let t7;
     	let t8;
-    	let t9;
+    	let div2;
+    	let button1;
+    	let t10;
+    	let t11;
     	let button2;
 
-    	let t10_value = (/*currentStep*/ ctx[0] === /*steps*/ ctx[7].length - 1
+    	let t12_value = (/*currentStep*/ ctx[0] === /*steps*/ ctx[7].length - 1
     	? '확인'
     	: '다음') + "";
 
-    	let t10;
+    	let t12;
     	let mounted;
     	let dispose;
     	let if_block0 = /*showingCursor*/ ctx[3] && create_if_block_5(ctx);
@@ -1273,8 +1280,8 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div4 = element("div");
     			div3 = element("div");
-    			div2 = element("div");
     			div0 = element("div");
     			h2 = element("h2");
     			t0 = text(/*displayText*/ ctx[2]);
@@ -1284,64 +1291,75 @@ var app = (function () {
     			t2 = space();
     			if_block2.c();
     			t3 = space();
+    			div1 = element("div");
     			if (if_block3) if_block3.c();
     			t4 = space();
     			button0 = element("button");
-    			t5 = text(t5_value);
+    			span = element("span");
+    			span.textContent = "🎤";
     			t6 = space();
-    			div1 = element("div");
+    			t7 = text(t7_value);
+    			t8 = space();
+    			div2 = element("div");
     			button1 = element("button");
     			button1.textContent = "뒤로가기";
-    			t8 = space();
+    			t10 = space();
     			if (if_block4) if_block4.c();
-    			t9 = space();
+    			t11 = space();
     			button2 = element("button");
-    			t10 = text(t10_value);
-    			attr_dev(h2, "class", "svelte-j8hh3a");
-    			add_location(h2, file$2, 283, 5, 8865);
-    			attr_dev(div0, "class", "question-container svelte-j8hh3a");
-    			add_location(div0, file$2, 282, 3, 8826);
-    			attr_dev(button0, "class", "voice-input-button svelte-j8hh3a");
+    			t12 = text(t12_value);
+    			attr_dev(h2, "class", "svelte-17mial3");
+    			add_location(h2, file$2, 298, 5, 9228);
+    			attr_dev(div0, "class", "question-container svelte-17mial3");
+    			add_location(div0, file$2, 297, 3, 9189);
+    			attr_dev(span, "class", "mic-icon svelte-17mial3");
+    			add_location(span, file$2, 366, 5, 11256);
+    			attr_dev(button0, "class", "voice-input-button svelte-17mial3");
     			toggle_class(button0, "recording", /*isRecording*/ ctx[5]);
-    			add_location(button0, file$2, 347, 3, 10748);
-    			attr_dev(button1, "class", "svelte-j8hh3a");
-    			add_location(button1, file$2, 356, 5, 10957);
-    			attr_dev(button2, "class", "svelte-j8hh3a");
-    			add_location(button2, file$2, 360, 5, 11112);
-    			attr_dev(div1, "class", "navigation svelte-j8hh3a");
-    			add_location(div1, file$2, 355, 3, 10926);
-    			attr_dev(div2, "class", "info-input svelte-j8hh3a");
-    			add_location(div2, file$2, 281, 1, 8797);
-    			attr_dev(div3, "class", "background svelte-j8hh3a");
-    			add_location(div3, file$2, 280, 0, 8770);
+    			add_location(button0, file$2, 361, 4, 11131);
+    			attr_dev(div1, "class", "voice-input-container svelte-17mial3");
+    			add_location(div1, file$2, 355, 3, 10977);
+    			attr_dev(button1, "class", "svelte-17mial3");
+    			add_location(button1, file$2, 372, 5, 11414);
+    			attr_dev(button2, "class", "svelte-17mial3");
+    			add_location(button2, file$2, 376, 5, 11569);
+    			attr_dev(div2, "class", "navigation svelte-17mial3");
+    			add_location(div2, file$2, 371, 3, 11383);
+    			attr_dev(div3, "class", "info-input svelte-17mial3");
+    			add_location(div3, file$2, 296, 1, 9160);
+    			attr_dev(div4, "class", "background svelte-17mial3");
+    			add_location(div4, file$2, 295, 0, 9133);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div2);
-    			append_dev(div2, div0);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			append_dev(div3, div0);
     			append_dev(div0, h2);
     			append_dev(h2, t0);
     			if (if_block0) if_block0.m(h2, null);
-    			append_dev(div2, t1);
-    			if (if_block1) if_block1.m(div2, null);
-    			append_dev(div2, t2);
-    			if_block2.m(div2, null);
-    			append_dev(div2, t3);
-    			if (if_block3) if_block3.m(div2, null);
-    			append_dev(div2, t4);
-    			append_dev(div2, button0);
-    			append_dev(button0, t5);
-    			append_dev(div2, t6);
-    			append_dev(div2, div1);
-    			append_dev(div1, button1);
-    			append_dev(div1, t8);
-    			if (if_block4) if_block4.m(div1, null);
-    			append_dev(div1, t9);
-    			append_dev(div1, button2);
-    			append_dev(button2, t10);
+    			append_dev(div3, t1);
+    			if (if_block1) if_block1.m(div3, null);
+    			append_dev(div3, t2);
+    			if_block2.m(div3, null);
+    			append_dev(div3, t3);
+    			append_dev(div3, div1);
+    			if (if_block3) if_block3.m(div1, null);
+    			append_dev(div1, t4);
+    			append_dev(div1, button0);
+    			append_dev(button0, span);
+    			append_dev(button0, t6);
+    			append_dev(button0, t7);
+    			append_dev(div3, t8);
+    			append_dev(div3, div2);
+    			append_dev(div2, button1);
+    			append_dev(div2, t10);
+    			if (if_block4) if_block4.m(div2, null);
+    			append_dev(div2, t11);
+    			append_dev(div2, button2);
+    			append_dev(button2, t12);
 
     			if (!mounted) {
     				dispose = [
@@ -1373,7 +1391,7 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block_4(ctx);
     					if_block1.c();
-    					if_block1.m(div2, t2);
+    					if_block1.m(div3, t2);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
@@ -1388,7 +1406,7 @@ var app = (function () {
 
     				if (if_block2) {
     					if_block2.c();
-    					if_block2.m(div2, t3);
+    					if_block2.m(div3, t3);
     				}
     			}
 
@@ -1398,14 +1416,16 @@ var app = (function () {
     				} else {
     					if_block3 = create_if_block_1$1(ctx);
     					if_block3.c();
-    					if_block3.m(div2, t4);
+    					if_block3.m(div1, t4);
     				}
     			} else if (if_block3) {
     				if_block3.d(1);
     				if_block3 = null;
     			}
 
-    			if (dirty[0] & /*isRecording*/ 32 && t5_value !== (t5_value = (/*isRecording*/ ctx[5] ? '녹음 중지' : '음성으로 답변하기') + "")) set_data_dev(t5, t5_value);
+    			if (dirty[0] & /*isRecording*/ 32 && t7_value !== (t7_value = (/*isRecording*/ ctx[5]
+    			? '녹음 중지하기 (Space)'
+    			: '음성으로 답변하기 (Space)') + "")) set_data_dev(t7, t7_value);
 
     			if (dirty[0] & /*isRecording*/ 32) {
     				toggle_class(button0, "recording", /*isRecording*/ ctx[5]);
@@ -1417,21 +1437,21 @@ var app = (function () {
     				} else {
     					if_block4 = create_if_block$1(ctx);
     					if_block4.c();
-    					if_block4.m(div1, t9);
+    					if_block4.m(div2, t11);
     				}
     			} else if (if_block4) {
     				if_block4.d(1);
     				if_block4 = null;
     			}
 
-    			if (dirty[0] & /*currentStep*/ 1 && t10_value !== (t10_value = (/*currentStep*/ ctx[0] === /*steps*/ ctx[7].length - 1
+    			if (dirty[0] & /*currentStep*/ 1 && t12_value !== (t12_value = (/*currentStep*/ ctx[0] === /*steps*/ ctx[7].length - 1
     			? '확인'
-    			: '다음') + "")) set_data_dev(t10, t10_value);
+    			: '다음') + "")) set_data_dev(t12, t12_value);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div4);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			if_block2.d();
@@ -1585,6 +1605,14 @@ var app = (function () {
 
     	onMount(() => {
     		startTyping();
+
+    		// 키보드 이벤트 리스너 추가
+    		window.addEventListener('keydown', handleKeydown);
+
+    		// 컴포넌트 제거 시 이벤트 리스너 정리
+    		return () => {
+    			window.removeEventListener('keydown', handleKeydown);
+    		};
     	});
 
     	function clearTypingEffect() {
@@ -1817,6 +1845,14 @@ var app = (function () {
     		}
     	}
 
+    	// 키보드 이벤트 핸들러 추가
+    	function handleKeydown(event) {
+    		if (event.code === 'Space') {
+    			event.preventDefault(); // 스페이스바의 기본 동작 방지
+    			startVoiceInput();
+    		}
+    	}
+
     	const writable_props = [];
 
     	Object_1$1.keys($$props).forEach(key => {
@@ -1872,7 +1908,8 @@ var app = (function () {
     		recordingTime,
     		recordingTimer,
     		updateRecordingTime,
-    		startVoiceInput
+    		startVoiceInput,
+    		handleKeydown
     	});
 
     	$$self.$inject_state = $$props => {

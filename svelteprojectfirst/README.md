@@ -1,14 +1,20 @@
 ## In Korea
 
 ```
-시작 전 cd svelteprojectfirst 로 진입 로컬 시작 
+시작 전 
+cd svelteprojectfirst
+npm run dev 
+진입 로컬 시작 
 이후 npm install을 통해 패키지 다운로드
-마지막으로 npm run dev를 통해 실행
+마지막으로 
+통해 실행
 
 fast api를 위한 터미널 생성 구동과
 본 프로그램 dev 실행
 
-위 파일 실행 전 python3 '.\STT_Model\Voice Input API\api.py' 로 실행
+위 파일 실행 전 
+python3 '.\STT_Model\Voice Input API\api.py'
+로 실행
 ```
 
 

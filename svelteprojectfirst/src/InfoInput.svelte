@@ -46,6 +46,13 @@
 
 	onMount(() => {
 			startTyping();
+			// 키보드 이벤트 리스너 추가
+			window.addEventListener('keydown', handleKeydown);
+			
+			// 컴포넌트 제거 시 이벤트 리스너 정리
+			return () => {
+					window.removeEventListener('keydown', handleKeydown);
+			}
 	});
 
     // steps 배열이나 currentStep이 변경될 때마다 타이핑 효과 재시작
@@ -276,6 +283,14 @@
             errorMessage = '마이크 접근에 실패했습니다.';
         }
     }
+
+	// 키보드 이벤트 핸들러 추가
+	function handleKeydown(event) {
+		if (event.code === 'Space') {
+			event.preventDefault(); // 스페이스바의 기본 동작 방지
+			startVoiceInput();
+		}
+	}
 </script>
 
 <div class="background">
@@ -337,21 +352,22 @@
 					>
 			{/if}
 
-			<!-- 음성 입력 상태 표시 -->
-			{#if recordingStatus}
-				<div class="recording-status">
-					{recordingStatus}
-				</div>
-			{/if}
-
-			<!-- 음성 입력 버튼 추가 -->
-			<button 
-				class="voice-input-button" 
-				class:recording={isRecording}
-				on:click={startVoiceInput}
-			>
-				{isRecording ? '녹음 중지' : '음성으로 답변하기'}
-			</button>
+			<!-- 통합된 음성 입력 UI -->
+			<div class="voice-input-container">
+				{#if recordingStatus}
+					<div class="recording-status">
+						{recordingStatus}
+					</div>
+				{/if}
+				<button 
+					class="voice-input-button" 
+					class:recording={isRecording}
+					on:click={startVoiceInput}
+				>
+					<span class="mic-icon">🎤</span>
+					{isRecording ? '녹음 중지하기 (Space)' : '음성으로 답변하기 (Space)'}
+				</button>
+			</div>
 
 			<div class="navigation">
 					<button on:click={handleBack}>뒤로가기</button>
@@ -502,8 +518,17 @@
 			100% { opacity: 1; }
 	}
 
-	.voice-input-button {
-        margin-top: 1em;
+	.voice-input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em 0;
+    }
+
+    .voice-input-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         background-color: #ff4081;
         color: white;
         border: none;
@@ -511,6 +536,11 @@
         border-radius: 25px;
         cursor: pointer;
         transition: all 0.3s ease;
+        font-size: 1.1em;
+    }
+
+    .mic-icon {
+        font-size: 1.2em;
     }
 
     .voice-input-button:hover {
@@ -518,18 +548,19 @@
         transform: scale(1.05);
     }
 
-	.recording-status {
+    .voice-input-button.recording {
+        background-color: #f50057;
+        animation: pulse 1.5s infinite;
+    }
+
+    .recording-status {
         margin: 1em 0;
-        padding: 0.5em;
+        padding: 0.5em 1em;
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
         border-radius: 5px;
         font-size: 1.1em;
-    }
-
-    .voice-input-button.recording {
-        background-color: #f50057;
-        animation: pulse 1.5s infinite;
+        animation: fadeIn 0.3s ease-in-out;
     }
 
     @keyframes pulse {
@@ -537,4 +568,9 @@
         50% { transform: scale(1.05); }
         100% { transform: scale(1); }
     }
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
 </style>
