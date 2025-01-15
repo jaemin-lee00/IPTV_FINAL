@@ -6,10 +6,6 @@ import numpy as np
 import re
 import logging
 
-'''
-after modify the number control text
-'''
-
 class KoreanQAProcessor:
     def __init__(self):
         self.model_name = "monologg/koelectra-base-v3-finetuned-korquad"
