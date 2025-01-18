@@ -1045,3 +1045,78 @@
 2025-01-15 11:34:45,296 - INFO - Removed temporary file: temp_name.wav
 2025-01-15 11:43:46,179 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
 2025-01-15 11:43:50,072 - INFO - 모델 로딩 완료 (소요 시간: 5.72초)
+2025-01-18 09:48:19,897 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-18 09:48:26,285 - INFO - 모델 로딩 완료 (소요 시간: 8.25초)
+2025-01-18 09:48:50,722 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-18 09:48:55,358 - INFO - 모델 로딩 완료 (소요 시간: 6.47초)
+2025-01-18 09:51:32,621 - INFO - GPU 사용 가능: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-01-18 09:51:41,529 - INFO - 모델 로딩 완료 (소요 시간: 9.56초)
+2025-01-18 10:10:32,186 - INFO - Received voice request - Question: 성함이 어떻게 되시나요?, Type: name
+2025-01-18 10:10:32,188 - INFO - Audio file size: 93449 bytes
+2025-01-18 10:10:32,190 - INFO - Saved temporary file: temp_name.wav
+2025-01-18 10:10:32,449 - INFO - Processing audio with duration 00:05.760
+2025-01-18 10:10:32,480 - INFO - 
+[temp_name.wav] 처리 결과:
+2025-01-18 10:10:32,482 - INFO - 파일 처리 시간: 0.29초
+2025-01-18 10:10:32,482 - INFO - 언어: 한국어
+2025-01-18 10:10:34,743 - INFO - [0.00s -> 5.74s]  아 이름은 김찬호
+2025-01-18 10:10:34,743 - INFO - Extracted text: 아 이름은 김찬호
+2025-01-18 10:10:34,744 - INFO - Processing answer - Type: name, Context: 아 이름은 김찬호
+2025-01-18 10:10:34,746 - INFO - Extracted name: 김찬호
+2025-01-18 10:10:34,746 - INFO - Processed answer: 김찬호
+2025-01-18 10:10:34,747 - INFO - Removed temporary file: temp_name.wav
+2025-01-18 10:10:45,888 - INFO - Received voice request - Question: 연세가 어떻게 되시나요?, Type: age
+2025-01-18 10:10:45,889 - INFO - Audio file size: 85797 bytes
+2025-01-18 10:10:45,890 - INFO - Saved temporary file: temp_age.wav
+2025-01-18 10:10:46,154 - INFO - Processing audio with duration 00:05.280
+2025-01-18 10:10:46,175 - INFO - 
+[temp_age.wav] 처리 결과:
+2025-01-18 10:10:46,176 - INFO - 파일 처리 시간: 0.28초
+2025-01-18 10:10:46,177 - INFO - 언어: 한국어
+2025-01-18 10:10:47,641 - INFO - [0.00s -> 5.28s]  내 나이는 65세
+2025-01-18 10:10:47,641 - INFO - Extracted text: 내 나이는 65세
+2025-01-18 10:10:47,642 - INFO - Processing answer - Type: age, Context: 내 나이는 65세
+2025-01-18 10:10:47,642 - INFO - Extracted age: 65
+2025-01-18 10:10:47,643 - INFO - Processed answer: 65
+2025-01-18 10:10:47,643 - INFO - Removed temporary file: temp_age.wav
+2025-01-18 10:10:54,925 - INFO - Received voice request - Question: 성별을 선택해 주세요, Type: sex
+2025-01-18 10:10:54,927 - INFO - Audio file size: 41908 bytes
+2025-01-18 10:10:54,930 - INFO - Saved temporary file: temp_sex.wav
+2025-01-18 10:10:55,221 - INFO - Processing audio with duration 00:02.580
+2025-01-18 10:10:55,235 - INFO - 
+[temp_sex.wav] 처리 결과:
+2025-01-18 10:10:55,236 - INFO - 파일 처리 시간: 0.30초
+2025-01-18 10:10:55,237 - INFO - 언어: 한국어
+2025-01-18 10:10:56,094 - INFO - [0.00s -> 2.56s]  나는 남자다
+2025-01-18 10:10:56,094 - INFO - Extracted text: 나는 남자다
+2025-01-18 10:10:56,094 - INFO - Processing answer - Type: sex, Context: 나는 남자다
+2025-01-18 10:10:56,094 - INFO - Processed answer: 남자
+2025-01-18 10:10:56,096 - INFO - Removed temporary file: temp_sex.wav
+2025-01-18 10:11:05,785 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-18 10:11:05,786 - INFO - Audio file size: 72015 bytes
+2025-01-18 10:11:05,788 - INFO - Saved temporary file: temp_weight.wav
+2025-01-18 10:11:06,093 - INFO - Processing audio with duration 00:04.440
+2025-01-18 10:11:06,115 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-18 10:11:06,116 - INFO - 파일 처리 시간: 0.33초
+2025-01-18 10:11:06,117 - INFO - 언어: 한국어
+2025-01-18 10:11:07,598 - INFO - [0.00s -> 3.04s]  몸무게는 75kg
+2025-01-18 10:11:07,599 - INFO - Extracted text: 몸무게는 75kg
+2025-01-18 10:11:07,599 - INFO - Processing answer - Type: weight, Context: 몸무게는 75kg
+2025-01-18 10:11:07,600 - INFO - Extracted number for weight: 75
+2025-01-18 10:11:07,600 - INFO - Processed answer: 75
+2025-01-18 10:11:07,601 - INFO - Removed temporary file: temp_weight.wav
+2025-01-18 10:11:17,129 - INFO - Received voice request - Question: 몸무게는 몇 kg이신가요?, Type: weight
+2025-01-18 10:11:17,131 - INFO - Audio file size: 54569 bytes
+2025-01-18 10:11:17,133 - INFO - Saved temporary file: temp_weight.wav
+2025-01-18 10:11:17,328 - INFO - Processing audio with duration 00:03.360
+2025-01-18 10:11:17,336 - INFO - 
+[temp_weight.wav] 처리 결과:
+2025-01-18 10:11:17,336 - INFO - 파일 처리 시간: 0.20초
+2025-01-18 10:11:17,337 - INFO - 언어: 한국어
+2025-01-18 10:11:18,258 - INFO - [0.00s -> 2.14s]  75kg
+2025-01-18 10:11:18,258 - INFO - Extracted text: 75kg
+2025-01-18 10:11:18,259 - INFO - Processing answer - Type: weight, Context: 75kg
+2025-01-18 10:11:18,259 - INFO - Extracted number for weight: 75
+2025-01-18 10:11:18,260 - INFO - Processed answer: 75
+2025-01-18 10:11:18,260 - INFO - Removed temporary file: temp_weight.wav

@@ -4,6 +4,9 @@ import torch
 from faster_whisper import WhisperModel
 from datetime import datetime
 import logging
+from multiprocessing import Pool, cpu_count
+import numpy as np
+import re
 
 def setup_logging():
     """로깅 설정"""
@@ -33,28 +36,59 @@ def load_model():
     """모델 로딩"""
     start_time = time.time()
     device, compute_type = setup_gpu()
-    model = WhisperModel("large-v3", device=device, compute_type=compute_type)
+    model = WhisperModel("base", device=device, compute_type=compute_type)
     load_time = time.time() - start_time
     logging.info(f"모델 로딩 완료 (소요 시간: {load_time:.2f}초)")
     return model
 
-def process_audio_file(model, file_path):
-    """오디오 파일 처리"""
-    start_time = time.time()
+def process_single_file(file_path):
+    """단일 파일 처리 (각 프로세스에서 실행)"""
     try:
-        segments, info = model.transcribe(file_path, beam_size=5)
-        process_time = time.time() - start_time
+        device, compute_type = setup_gpu()
+        model = WhisperModel("base", device=device, compute_type=compute_type)
         
-        logging.info(f"\n[{file_path}] 처리 결과:")
-        logging.info(f"파일 처리 시간: {process_time:.2f}초")
-        logging.info(f"감지된 언어: {info.language} (확률: {info.language_probability:.2f})")
+        segments, info = model.transcribe(file_path, beam_size=5)
+        
+        # 한국어가 아닌 경우 처리 중단
+        if info.language != 'ko':
+            return {
+                'file': file_path,
+                'success': False,
+                'error': f"지원하지 않는 언어 감지: {info.language} (확률: {info.language_probability:.2f})"
+            }
+        
+        results = []
+        korean_pattern = re.compile('[가-힣]')  # 한글 문자 패턴
         
         for segment in segments:
-            logging.info(f"[{segment.start:.2f}s -> {segment.end:.2f}s] {segment.text}")
-        return True
+            # 한글이 포함된 세그먼트만 저장
+            if korean_pattern.search(segment.text):
+                results.append({
+                    'start': segment.start,
+                    'end': segment.end,
+                    'text': segment.text
+                })
+        
+        if not results:
+            return {
+                'file': file_path,
+                'success': False,
+                'error': "한국어 텍스트가 감지되지 않았습니다."
+            }
+        
+        return {
+            'file': file_path,
+            'success': True,
+            'language': info.language,
+            'language_probability': info.language_probability,
+            'segments': results
+        }
     except Exception as e:
-        logging.error(f"오류 발생 ({file_path}): {str(e)}")
-        return False
+        return {
+            'file': file_path,
+            'success': False,
+            'error': f"파일 처리 중 오류 발생: {str(e)}"
+        }
 
 def find_audio_files(folder):
     """오디오 파일 검색"""
@@ -66,21 +100,116 @@ def find_audio_files(folder):
     ]
     return audio_files
 
-def process_files(model, audio_files):
-    """파일 일괄 처리"""
-    successful = 0
+def detect_language(model, file_path):
+    """파일의 언어 감지"""
+    try:
+        segments, info = model.transcribe(file_path, beam_size=5)
+        return {
+            'file': file_path,
+            'is_korean': info.language == 'ko',
+            'language': info.language,
+            'probability': info.language_probability
+        }
+    except Exception as e:
+        return {
+            'file': file_path,
+            'is_korean': False,
+            'error': str(e)
+        }
+
+def process_files(audio_files):
+    """파일 병렬 처리"""
+    n_processes = min(4, cpu_count())
+    logging.info(f"병렬 처리 프로세스 수: {n_processes}")
+    
+    # 언어 감지를 위한 모델 로드
+    device, compute_type = setup_gpu()
+    model = WhisperModel("base", device=device, compute_type=compute_type)
+    
+    # 먼저 한국어 파일 필터링
+    logging.info("\n한국어 파일 필터링 시작...")
+    korean_files = []
+    non_korean_files = []
+    
     for file in audio_files:
-        if process_audio_file(model, file):
-            successful += 1
+        result = detect_language(model, file)
+        if result['is_korean']:
+            korean_files.append(file)
+            logging.info(f"한국어 파일 감지: {os.path.basename(file)}")
+        else:
+            non_korean_files.append({
+                'file': file,
+                'language': result.get('language', 'unknown'),
+                'probability': result.get('probability', 0)
+            })
+            logging.info(f"비한국어 파일 제외: {os.path.basename(file)}")
+    
+    logging.info(f"\n총 {len(audio_files)}개 중 한국어 파일: {len(korean_files)}개")
+    logging.info(f"비한국어 파일: {len(non_korean_files)}개")
+    
+    if not korean_files:
+        logging.warning("처리할 한국어 파일이 없습니다.")
+        return 0
+    
+    successful = 0
+    failed = 0
+    error_files = []
+    
+    try:
+        with Pool(processes=n_processes) as pool:
+            results = []
+            for batch in np.array_split(korean_files, n_processes):
+                for file in batch:
+                    results.append(pool.apply_async(process_single_file, (file,)))
+            
+            # 결과 수집
+            for result in results:
+                try:
+                    data = result.get(timeout=300)
+                    if data['success'] and len(data['segments']) > 0:
+                        successful += 1
+                        logging.info(f"\n[변환 성공] 파일: {os.path.basename(data['file'])}")
+                        logging.info("="*50)
+                        logging.info("한국어 음성-텍스트 변환 결과:")
+                        for segment in data['segments']:
+                            logging.info(f"[{segment['start']:.1f}초 ~ {segment['end']:.1f}초] {segment['text']}")
+                        logging.info("="*50)
+                    else:
+                        failed += 1
+                        error_files.append({
+                            'file': os.path.basename(data['file']),
+                            'error': data.get('error', '한국어 텍스트 없음')
+                        })
+                        logging.error(f"[실패] 파일: {os.path.basename(data['file'])} - {data.get('error', '한국어 텍스트 없음')}")
+                        
+                except Exception as e:
+                    failed += 1
+                    error_files.append({
+                        'file': 'Unknown',
+                        'error': str(e)
+                    })
+                    logging.error(f"처리 중 예외 발생: {str(e)}")
+            
+            pool.close()
+            pool.join()
+            
+    except Exception as e:
+        logging.error(f"프로세스 풀 실행 중 치명적 오류: {str(e)}")
+    finally:
+        # 요약 통계
+        logging.info("\n" + "="*50)
+        logging.info("처리 완료 요약")
+        logging.info("="*50)
+        logging.info(f"총 처리된 한국어 파일: {len(korean_files)}개")
+        logging.info(f"변환 성공: {successful}개")
+        logging.info(f"변환 실패: {failed}개")
+        logging.info("="*50)
+    
     return successful
 
 def main():
     setup_logging()
     start_time = time.time()
-    
-    # 모델 로딩
-    logging.info("모델 로딩 시작...")
-    model = load_model()
     
     # 오디오 파일 찾기
     audio_folder = "Audio"
@@ -92,7 +221,7 @@ def main():
     
     # 파일 처리
     logging.info(f"\n총 {len(audio_files)}개 파일 처리 시작")
-    successful = process_files(model, audio_files)
+    successful = process_files(audio_files)
     
     # 결과 출력
     total_time = time.time() - start_time
