@@ -554,7 +554,7 @@
     }
 
     .recording-status {
-        margin: 1em 0;
+        margin-bottom: 1em;
         padding: 0.5em 1em;
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
@@ -568,6 +568,36 @@
         50% { transform: scale(1.05); }
         100% { transform: scale(1); }
     }
+
+	.recording-controls {
+		margin: 1em 0;
+		text-align: center;
+	}
+
+	.voice-input-hint {
+		margin-top: 1em;
+		color: #666;
+		font-size: 1.1em;
+	}
+
+	.keyboard-key {
+		background-color: #f0f0f0;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 2px 8px;
+		font-family: monospace;
+		box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+	}
+
+	.recording-status {
+		margin: 1em 0;
+		padding: 0.5em;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+		border-radius: 5px;
+		font-size: 1.1em;
+		animation: fadeIn 0.3s ease-in-out;
+	}
 
 	@keyframes fadeIn {
 		from { opacity: 0; }
